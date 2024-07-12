@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>MYSQL基础 | bulaize2023</title>
+  <meta name="keywords" content=" MYSQL ">
+  <meta name="description" content="MYSQL基础 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-3.MySQL基础" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">MYSQL基础</h1>
     
     <div class="article-meta">
         
@@ -550,7 +550,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="第一周">第一周</a>
+            <a  data-rel="第一阶段">第一阶段</a>
             
         </span>
         
@@ -558,21 +558,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
-            
-            <a class="color5">nmap</a>
+            <a class="color1">MYSQL</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:33:51'>2024-07-12 20:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:179</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +589,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +605,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <ol>
+<li><p>在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773334482-3ee6a858-9d6b-4e93-adab-3cbafd207c91.png#averageHue=%23fbfafa&clientId=uf4b43a83-b80b-4&from=paste&height=515&id=u3d7208ca&originHeight=644&originWidth=734&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39035&status=done&style=none&taskId=ueeeda09e-1f99-4e07-aa8e-5faf41fb4b4&title=&width=587.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773344753-2b5a55b0-dd03-4ee1-abf3-e89886e61283.png#averageHue=%23faf8f7&clientId=uf4b43a83-b80b-4&from=paste&height=542&id=uf2ae5771&originHeight=677&originWidth=1172&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=111015&status=done&style=none&taskId=u3ebd5f93-3789-47ea-8f61-be843372925&title=&width=937.6" alt="image.png"></p>
+</li>
+<li><p>输入mysql -u用户名 -p密码，连接数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773407390-9bd4b337-58f9-4488-ac23-3ea215e80a31.png#averageHue=%231e1d1b&clientId=uf4b43a83-b80b-4&from=paste&height=321&id=u79093dbc&originHeight=401&originWidth=810&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=41202&status=done&style=none&taskId=u9e8ee425-136b-4380-b746-edb14e4772e&title=&width=648" alt="image.png"></p>
+</li>
+<li><p>使用show databases;查看所有数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773581854-4fcd552e-fe65-4e4d-8bd8-db6473b9cc63.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=264&id=udccd0ed8&originHeight=330&originWidth=354&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13247&status=done&style=none&taskId=u03524d0f-670f-4c54-baae-0647f01defd&title=&width=283.2" alt="image.png"></p>
+</li>
+<li><p>使用create database 数据库名;，创建数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773651771-841d8641-297d-4450-9139-e2a6d3a12756.png#averageHue=%23141210&clientId=uf4b43a83-b80b-4&from=paste&height=45&id=ue491e64c&originHeight=56&originWidth=396&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=4381&status=done&style=none&taskId=ucd888c98-4205-4c46-a8f4-18a35994434&title=&width=316.8" alt="image.png"></p>
+</li>
+<li><p>use test;使用test数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773772671-a62abbdc-3306-400a-affc-a48f72020cf5.png#averageHue=%230f0e0e&clientId=uf4b43a83-b80b-4&from=paste&height=46&id=u34d92f3d&originHeight=57&originWidth=709&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3020&status=done&style=none&taskId=u5a839f1b-bfe7-4616-8bdb-9bd0669039d&title=&width=567.2" alt="image.png"></p>
+</li>
+<li><p>show tables;查看test数据库下所有表 <img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773866985-5515be56-3d2e-4531-a447-98f3252b0938.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=44&id=ub390bf05&originHeight=55&originWidth=419&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3204&status=done&style=none&taskId=u063f2ead-d535-409d-b946-d0355a54f80&title=&width=335.2" alt="image.png"></p>
+</li>
+<li><p>创建用户表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table users(</span><br><span class="line">    id int auto_increment primary key,</span><br><span class="line">    username varchar(50) not null,</span><br><span class="line">    password varchar(50) not null,</span><br><span class="line">    email varchar(100)</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>desc users;查看user表结构<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774282136-9f77fac4-ba28-4e86-8ef8-b253bef02eec.png#averageHue=%2312100f&clientId=uf4b43a83-b80b-4&from=paste&height=253&id=uf1248471&originHeight=316&originWidth=751&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=22788&status=done&style=none&taskId=uf88c009d-49af-4a28-b906-2e893a4e084&title=&width=600.8" alt="image.png"></p>
+</li>
+<li><p>insert into插入数据，有两种插入方式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774464034-5da2259a-cf2b-4686-9b5e-3bb17d143a6d.png#averageHue=%2313110f&clientId=uf4b43a83-b80b-4&from=paste&height=90&id=u335375d6&originHeight=112&originWidth=923&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13547&status=done&style=none&taskId=u8e8bede3-58ef-4490-bfb2-7ba879ede36&title=&width=738.4" alt="image.png"></p>
+</li>
+<li><p>select * from users;查看users表里所有内容<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774525073-6cf605a2-5c0d-4c4c-860d-73fc48c09753.png#averageHue=%23151312&clientId=uf4b43a83-b80b-4&from=paste&height=134&id=u99090300&originHeight=168&originWidth=533&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9948&status=done&style=none&taskId=u194e2bcf-c6e0-4c31-889f-82d763860bf&title=&width=426.4" alt="image.png"></p>
+</li>
+<li><p>update users set username &#x3D; ‘admin’,password&#x3D;’7777’ where username&#x3D;’lisi’;修改表数据<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774692012-0b366687-b712-4d9a-b90b-f5ae34c2d9be.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=211&id=uc7957eec&originHeight=264&originWidth=842&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18663&status=done&style=none&taskId=u3098a05a-c106-42f1-83a1-21467d28818&title=&width=673.6" alt="image.png"></p>
+</li>
+<li><p>delete from users where id&#x3D;1;删除表数据<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774755121-2751d66b-ffc0-4357-84c6-ecc23d70d0ac.png#averageHue=%23141211&clientId=uf4b43a83-b80b-4&from=paste&height=170&id=ufe927fcf&originHeight=212&originWidth=478&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=12118&status=done&style=none&taskId=ud3343aa0-fd37-43f2-9106-2bd8f9e281e&title=&width=382.4" alt="image.png"></p>
+</li>
+<li><p>drop table 表名;drop database 数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774900167-e2f27b1d-0b01-4167-a233-c977ade4ca81.png#averageHue=%23111010&clientId=uf4b43a83-b80b-4&from=paste&height=313&id=u18c0f949&originHeight=391&originWidth=488&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=17008&status=done&style=none&taskId=udbfaec55-ac29-4e5f-8d31-da61e2781b6&title=&width=390.4" alt="image.png"></p>
+</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

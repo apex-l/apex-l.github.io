@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>制作python钓鱼网站 | bulaize2023</title>
+  <meta name="keywords" content=" python , 钓鱼 ">
+  <meta name="description" content="制作python钓鱼网站 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-制作python钓鱼网站" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">制作python钓鱼网站</h1>
     
     <div class="article-meta">
         
@@ -558,21 +558,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
+            <a class="color2">python</a>
             
-            <a class="color5">nmap</a>
+            <a class="color3">钓鱼</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 21:06:57'>2024-07-12 20:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:317</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +591,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +607,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <ol>
+<li>下载小皮面板并打开apache和mysql服务<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720693678511-b37c242f-2036-4e74-be55-221b88d93def.png#averageHue=%23e2bb85&clientId=ud1d54063-1934-4&from=paste&height=568&id=ua8b3425c&originHeight=710&originWidth=987&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=82499&status=done&style=none&taskId=u3c7636bb-563d-4292-9e78-01b47c6dd4c&title=&width=789.6" alt="image.png"></li>
+<li>新建一个网站<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720693781130-86c11545-dc3f-4cd8-b6c5-6a1f9d88e446.png#averageHue=%23e3be8c&clientId=ud1d54063-1934-4&from=paste&height=614&id=u2f090000&originHeight=768&originWidth=988&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=84795&status=done&style=none&taskId=ub653523e-85cb-4a56-a30a-4600a2cc4bb&title=&width=790.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720693819547-367a0e5e-22ab-45fa-af09-7fc869a22108.png#averageHue=%23d3d6c7&clientId=ud1d54063-1934-4&from=paste&height=664&id=u98bda13d&originHeight=830&originWidth=1217&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=87368&status=done&style=none&taskId=uc27203de-74d0-46e0-830d-e3f3228f384&title=&width=973.6" alt="image.png"></li>
+<li>找到python下载网页并另存<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720694472375-c73de3a7-99dc-46d1-badc-e5b1ff39a693.png#averageHue=%23355a79&clientId=ud1d54063-1934-4&from=paste&height=555&id=uae91da80&originHeight=694&originWidth=1661&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=310270&status=done&style=none&taskId=u4a372052-b3a6-4109-9f5c-3dc6fe4651d&title=&width=1328.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720694512413-416e1950-a53e-4cd4-93d6-8796d9dfb212.png#averageHue=%232d6564&clientId=ud1d54063-1934-4&from=paste&height=224&id=ucb4ca021&originHeight=280&originWidth=114&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=41529&status=done&style=none&taskId=u999b9cc1-4cdc-4fee-81a4-a6fca3256c4&title=&width=91.2" alt="image.png"></li>
+<li>一起拖入到phpstudy网页根目录下并将网页重命名为index.html<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720694588631-40ea0989-cc42-4e0a-a587-68b88b14a1dd.png#averageHue=%23f9f8f7&clientId=ud1d54063-1934-4&from=paste&height=161&id=u49669b62&originHeight=201&originWidth=581&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=17312&status=done&style=none&taskId=u7e83ddb4-61e8-4a9b-b8eb-5023c6558fe&title=&width=464.8" alt="image.png"></li>
+<li>使用大灰狼或者cs生成一个木马软件(这里懒得搞用计算器.exe代替)并将python安装包一起压<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695161405-a02f6602-9078-4b16-a11c-5f9c1127a457.png#averageHue=%23efeeed&clientId=ud1d54063-1934-4&from=paste&height=370&id=u97ef9440&originHeight=462&originWidth=525&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=27040&status=done&style=none&taskId=u89d7dfc5-97be-4f60-8185-302568f5176&title=&width=420" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720694880540-18f6189c-414b-4d73-8283-35c6470d152c.png#averageHue=%23f2efee&clientId=ud1d54063-1934-4&from=paste&height=322&id=uf327e7aa&originHeight=402&originWidth=531&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=28541&status=done&style=none&taskId=u3a64ddba-8f69-4f7e-83a2-ace675d680b&title=&width=424.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720694942723-9126fa47-708f-496e-92e3-a82ca0a0cd8a.png#averageHue=%23f8f8f8&clientId=ud1d54063-1934-4&from=paste&height=464&id=uecbc988f&originHeight=580&originWidth=501&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=16430&status=done&style=none&taskId=u26d34e79-980e-4934-bb12-fb5ca85172d&title=&width=400.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695012118-5e1b8b17-8ad1-42c3-bcf7-81b5e6b6990f.png#averageHue=%23f7f4f4&clientId=ud1d54063-1934-4&from=paste&height=406&id=u85a32fe8&originHeight=507&originWidth=800&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=47405&status=done&style=none&taskId=u9dce3dc2-de2f-4c33-b55f-e3cc4f916a6&title=&width=640" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695029075-172a3fc1-4082-489a-ad80-599bb4304fb7.png#averageHue=%23f7f6f6&clientId=ud1d54063-1934-4&from=paste&height=312&id=uc4a89767&originHeight=390&originWidth=477&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=14282&status=done&style=none&taskId=ua6146781-2fae-435b-83d9-e49753986d7&title=&width=381.6" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695101412-e3f4a126-b37e-46b3-b590-28f5f3211ae8.png#averageHue=%23f6f3f3&clientId=ud1d54063-1934-4&from=paste&height=456&id=ub6adb2eb&originHeight=570&originWidth=437&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=24923&status=done&style=none&taskId=uf7d240ec-122e-460f-a7e7-7c5a47eb7b1&title=&width=349.6" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695251269-80f86981-8e57-4aab-b86b-8826d74e4a05.png#averageHue=%23faf9f7&clientId=ud1d54063-1934-4&from=paste&height=131&id=u56ec02b6&originHeight=164&originWidth=468&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=11412&status=done&style=none&taskId=ub31b6fe5-aa90-4988-840b-3f65b016077&title=&width=374.4" alt="image.png"></li>
+<li>打开Restorator.exe并将压缩包和python安装包一起拖进去<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695394875-cb7d6e15-6cb5-4c74-82d2-fb9d6181b2bc.png#averageHue=%23f6f5f4&clientId=ud1d54063-1934-4&from=paste&height=342&id=u2736b33a&originHeight=428&originWidth=1096&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=104228&status=done&style=none&taskId=ueb8115e7-5acc-4e53-8b5f-686ad0781b2&title=&width=876.8" alt="image.png"></li>
+<li>将python的图标复制粘贴到压缩包的图标里并将之前图标删除，然后保存<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695487460-593f19c0-a7db-4db4-b529-8fdd05241e82.png#averageHue=%23edebe7&clientId=ud1d54063-1934-4&from=paste&height=477&id=u12e40d91&originHeight=596&originWidth=867&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=134703&status=done&style=none&taskId=u298446f1-6d9b-4eec-89b2-4db0d3e51ea&title=&width=693.6" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695545785-3715f484-0b3f-4f43-b8b8-e7842fa0b8ab.png#averageHue=%23fbfaf9&clientId=ud1d54063-1934-4&from=paste&height=354&id=ub3b760a9&originHeight=443&originWidth=976&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=46207&status=done&style=none&taskId=ubb65f065-8c7d-4b88-8815-4a28a74738a&title=&width=780.8" alt="image.png"></li>
+<li>保存之后会将之前的安装包备份，这里图标还没有变，我们要将更换后的安装包拖入另一个文件夹图才会变<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695693763-70254737-fe34-4b24-b103-55d0be8af9df.png#averageHue=%23f9f9f8&clientId=ud1d54063-1934-4&from=paste&height=234&id=u2efb6beb&originHeight=292&originWidth=1062&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=43934&status=done&style=none&taskId=u530b9616-54de-490c-8259-69cb7052254&title=&width=849.6" alt="image.png"></li>
+<li>将压缩包重命名为python压缩包的名字然后再拖入刚才制作的python网页的根目录里<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695826149-c2904a8d-6f32-42b5-a463-ab7f18cb7c9d.png#averageHue=%23fbfaf9&clientId=ud1d54063-1934-4&from=paste&height=245&id=ud0606a9a&originHeight=306&originWidth=850&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=30449&status=done&style=none&taskId=ubb2b80d0-52ff-4b85-899a-2ce1af85c68&title=&width=680" alt="image.png"></li>
+<li>双击打开index.html并找到下载python按钮的代码所在地<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720695978188-31d88065-13fb-4890-95b8-a6032fe18ae7.png#averageHue=%23e8ce5c&clientId=ud1d54063-1934-4&from=paste&height=454&id=u62173b74&originHeight=567&originWidth=1531&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=136431&status=done&style=none&taskId=u827221b9-753e-46c6-842b-8d233640c33&title=&width=1224.8" alt="image.png"></li>
+<li>用记事本打开index.html并修改下载路径并保存退出<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720696196684-5ebe92ad-db93-4c90-8426-a44e1db7d97a.png#averageHue=%23f9f8f7&clientId=ud1d54063-1934-4&from=paste&height=446&id=u6ad4028e&originHeight=557&originWidth=1137&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=33501&status=done&style=none&taskId=uf592f051-0288-457a-8cf8-e410abaa594&title=&width=909.6" alt="image.png"></li>
+<li>重新打开网页并点击下载就会将我们刚刚制作好的压缩包下载到本地，只要双击，那么压缩包里的木马文件就会在后台悄悄运行，从而达到监听目标电脑的目的<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720696455361-2c658309-4953-4cc2-b9b8-752358c080d1.png#averageHue=%23658a94&clientId=ud1d54063-1934-4&from=paste&height=636&id=ueb1f96dd&originHeight=795&originWidth=1251&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=112584&status=done&style=none&taskId=u3d41eb8d-104b-44c7-9fde-7561462a015&title=&width=1000.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720696495510-8782d4c9-2811-487d-adbd-835454835cee.png#averageHue=%23eede98&clientId=ud1d54063-1934-4&from=paste&height=560&id=uabf9a8f5&originHeight=700&originWidth=1121&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=188835&status=done&style=none&taskId=u1c13e111-d0e1-4372-9899-84a4617c62b&title=&width=896.8" alt="image.png"></li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

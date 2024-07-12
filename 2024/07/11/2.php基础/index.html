@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>PHP基础 | bulaize2023</title>
+  <meta name="keywords" content=" PHP ">
+  <meta name="description" content="PHP基础 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-2.php基础" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">PHP基础</h1>
     
     <div class="article-meta">
         
@@ -550,7 +550,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="第一周">第一周</a>
+            <a  data-rel="第一阶段">第一阶段</a>
             
         </span>
         
@@ -558,21 +558,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
-            
-            <a class="color5">nmap</a>
+            <a class="color4">PHP</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:28:11'>2024-07-11 20:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:821</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +589,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-PHP-%E5%8F%98%E9%87%8F%E8%A7%84%E5%88%99"><span class="toc-text">1.PHP 变量规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-PHP-%E6%98%AF%E4%B8%80%E9%97%A8%E5%BC%B1%E7%B1%BB%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-text">2.PHP 是一门弱类型语言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%87%BD%E6%95%B0%EF%BC%8C%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"><span class="toc-text">3.函数，形参和实参</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-if%E5%88%A4%E6%96%AD"><span class="toc-text">4.if判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-for%E5%BE%AA%E7%8E%AF"><span class="toc-text">5.for循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-GET%E4%B8%8EPOST%E4%BC%A0%E5%80%BC"><span class="toc-text">6.GET与POST传值</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +605,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <h1 id="1-PHP-变量规则"><a href="#1-PHP-变量规则" class="headerlink" title="1.PHP 变量规则"></a>1.PHP 变量规则</h1><p>变量以 $ 符号开始，后面跟着变量的名称<br>变量名必须以字母或者下划线字符开始<br>变量名只能包含字母、数字以及下划线（A-z、0-9 和 _ ）<br>变量名不能包含空格<br>变量名是区分大小写的（y 和 Y 是两个不同的变量）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$c = 12;</span><br><span class="line">$b = 13;</span><br><span class="line">$A = &quot;AAA&quot;;</span><br><span class="line">$a = &quot;aaa&quot;;</span><br><span class="line">echo $c + $b.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $A.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $a;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720781431790-59df4de3-6eec-4985-8a1b-2abd364ece54.png#averageHue=%23fbfbfa&clientId=u9f00ba91-4dbf-4&from=paste&height=129&id=ucb978be2&originHeight=161&originWidth=506&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=6224&status=done&style=none&taskId=u7f0af2ab-d06e-48e4-bae7-bce194272f7&title=&width=404.8" alt="image.png"></p>
+<h1 id="2-PHP-是一门弱类型语言"><a href="#2-PHP-是一门弱类型语言" class="headerlink" title="2.PHP 是一门弱类型语言"></a>2.PHP 是一门弱类型语言</h1><p>在上面的实例中，我们注意到，不必向 PHP 声明该变量的数据类型。<br>PHP 会根据变量的值，自动把变量转换为正确的数据类型。<br>在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=5;</span><br><span class="line">var_dump($a);   //默认为int类型</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line">$b=1.5;</span><br><span class="line">var_dump($b);   //默认为浮点类型</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line">$x=&quot;sdsdsd&quot;;</span><br><span class="line">var_dump($x);   //默认为String类型</span><br><span class="line">echo &quot;&lt;br&gt;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720781809854-856d159d-5a70-49c0-865c-80b078adb8d4.png#averageHue=%23f5f3f2&clientId=u9f00ba91-4dbf-4&from=paste&height=93&id=ud9569031&originHeight=116&originWidth=219&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3320&status=done&style=none&taskId=uc7c57187-88f7-4126-9f34-00df3bf6504&title=&width=175.2" alt="image.png"></p>
+<h1 id="3-函数，形参和实参"><a href="#3-函数，形参和实参" class="headerlink" title="3.函数，形参和实参"></a>3.函数，形参和实参</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=1;</span><br><span class="line">$b=2;</span><br><span class="line">echo add($a,$b);    //$a和$b为实参</span><br><span class="line">function add($c,$d)&#123;    //$c和$d为形参</span><br><span class="line">    return $c+$d;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="4-if判断"><a href="#4-if判断" class="headerlink" title="4.if判断"></a>4.if判断</h1><p>if 语句用于仅当指定条件成立时执行代码。<br>if (条件)<br>{<br>条件成立时要执行的代码;<br>} </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=100;</span><br><span class="line">$b=110;</span><br><span class="line">if($a&gt;$b)&#123;</span><br><span class="line">    echo $a;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo $b;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="5-for循环"><a href="#5-for循环" class="headerlink" title="5.for循环"></a>5.for循环</h1><p>for (初始值; 条件; 增量)<br>{<br>要执行的代码;<br>}<br>参数：<br>初始值：主要是初始化一个变量值，用于设置一个计数器（但可以是任何在循环的开始被执<br>行一次的代码）。<br>条件：循环执行的限制条件。如果为 TRUE，则循环继续。如果为 FALSE，则循环结束。<br>增量：主要用于递增计数器（但可以是任何在循环的结束被执行的代码）。<br>注释：上面的初始值和增量**参数可为空，或者有多个表达式（用逗号分隔）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">for ($i=1; $i&lt;=9; $i++) &#123;</span><br><span class="line">    for ($j=1; $j&lt;=$i; $j++) &#123;</span><br><span class="line">        echo $j.&quot;*&quot;.$i.&quot;=&quot;.$i*$j.&quot;\t&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    echo &quot;&lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720782987508-c6b71e05-d80b-4632-8b22-66cf5e76579f.png#averageHue=%23f4f2f1&clientId=uea15c90c-3d02-4&from=paste&height=215&id=u188fa542&originHeight=269&originWidth=705&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18801&status=done&style=none&taskId=u662322b0-aa59-46c4-b2d5-88966caf4af&title=&width=564" alt="image.png"></p>
+<h1 id="6-GET与POST传值"><a href="#6-GET与POST传值" class="headerlink" title="6.GET与POST传值"></a>6.GET与POST传值</h1><p>预定义的 $_GET 变量用于收集来自 method&#x3D;”get” 的表单中的值。<br>从带有 GET 方法的表单发送的信息，对任何人都是可见的（会显示在浏览器的地址栏），并且对发送信息的量也有限制。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a=$_GET[&#x27;a&#x27;];</span><br><span class="line">$b=$_GET[$a];</span><br><span class="line">if($b==2)&#123;</span><br><span class="line">    echo &quot;你无敌了，孩子&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720783674985-b649301a-d5eb-40e0-a8f9-93ad4a6e499a.png#averageHue=%23f9f8f8&clientId=uea15c90c-3d02-4&from=paste&height=82&id=ud29657e2&originHeight=103&originWidth=500&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=6705&status=done&style=none&taskId=ud9f8d605-3b28-4600-8973-5002703ddd5&title=&width=400" alt="image.png"><br>预定义的 $_POST 变量用于收集来自 method&#x3D;”post” 的表单中的值。<br>从带有 POST 方法的表单发送的信息，对任何人都是不可见的（不会显示在浏览器的地址栏），并且对发送信息的量也没有限制。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    用户名：&lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</span><br><span class="line">    密码：&lt;input type=&quot;password&quot; name=&#x27;fpw&#x27;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">$name = $_POST[&#x27;fname&#x27;];</span><br><span class="line">$pw = $_POST[&#x27;fpw&#x27;];</span><br><span class="line">if(isset($pw))&#123;</span><br><span class="line">    echo &quot;&lt;br&gt;&quot;.&quot;用户名:&quot;.$name;</span><br><span class="line">    echo &quot;&lt;br&gt;&quot;.&quot;密码:&quot;.$pw;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720783907415-e10eee06-570d-4a10-bb13-500209a5d356.png#averageHue=%23f8f8f7&clientId=uea15c90c-3d02-4&from=paste&height=166&id=udf9903dc&originHeight=208&originWidth=728&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=11450&status=done&style=none&taskId=u73371962-7656-4207-b9dd-91561301ba2&title=&width=582.4" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

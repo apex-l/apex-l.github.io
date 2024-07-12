@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>语雀上传文章 | bulaize2023</title>
+  <meta name="keywords" content=" 语雀 , 文章 ">
+  <meta name="description" content="语雀上传文章 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-语雀上传文章" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">语雀上传文章</h1>
     
     <div class="article-meta">
         
@@ -558,21 +558,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
+            <a class="color3">语雀</a>
             
-            <a class="color5">nmap</a>
+            <a class="color3">文章</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 21:06:16'>2024-07-10 19:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:158</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +591,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +607,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <ol>
+<li>选择一篇文章公开<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692081635-214ea6bd-3eba-4014-b3a2-abf67793b136.png#averageHue=%23f9f8f8&clientId=ua656a4ee-80a4-4&from=paste&height=380&id=u0060f307&originHeight=475&originWidth=1035&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=63521&status=done&style=none&taskId=u9b8f7cc0-4fa4-46cb-8bda-a537a4049fd&title=&width=828" alt="image.png"></li>
+<li>点击文章右边三个点在点击导出<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692175688-b63ccaa7-e9dc-4fe9-bc3a-f4acb7c9169a.png#averageHue=%23f8f8f8&clientId=u5cc12ed4-2c26-4&from=paste&height=409&id=ue4894fbc&originHeight=511&originWidth=396&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=21430&status=done&style=none&taskId=u89c85526-3af5-41a0-b70c-ab959121d7e&title=&width=316.8" alt="image.png"></li>
+<li>选择以markdown形式导出，然后在下一页选择导出 LaTeX 公式为 Markdown 语法<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692298115-f48a3150-68df-4fee-817d-b09ab8969b5a.png#averageHue=%23fdfdfc&clientId=u5cc12ed4-2c26-4&from=paste&height=329&id=u51a61f93&originHeight=411&originWidth=758&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=24047&status=done&style=none&taskId=ud65fbf39-8826-4a9b-802a-04b3d2a76e4&title=&width=606.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692313644-906be92f-abae-4ec4-b8c9-6ff105b7c18c.png#averageHue=%23fbfbfb&clientId=u5cc12ed4-2c26-4&from=paste&height=306&id=ub5613a41&originHeight=383&originWidth=780&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=22955&status=done&style=none&taskId=uf7e92114-f4f0-4dfb-bf29-ba4c1974050&title=&width=624" alt="image.png"></li>
+<li>导出到blog文件夹下的source文件夹下的_posts文件夹里面<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692405915-1d383492-c4c4-4f73-bc34-95f479dcadf8.png#averageHue=%23faf9f9&clientId=u5cc12ed4-2c26-4&from=paste&height=167&id=u66ebdb25&originHeight=209&originWidth=951&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=24836&status=done&style=none&taskId=u24d77146-dae0-46e9-8869-efcb1e1dfe3&title=&width=760.8" alt="image.png"></li>
+<li>双击刚刚导出文件以vscode打开并添加标题</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692564290-e3330fb6-aad3-4cde-aa38-bcdf531f9c6b.png#averageHue=%23262423&clientId=u9a70072a-28e9-4&from=paste&height=298&id=u0ef16a75&originHeight=372&originWidth=1234&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=58797&status=done&style=none&taskId=u48b74e06-e3dd-4c36-a384-7a0422e47fb&title=&width=987.2" alt="image.png"></p>
+<ol start="6">
+<li>因为语雀有防盗链，导致文件里的图片无法在博客上显示所以我们要在D:\tools\lgit\blog\themes\3-hexo\layout_partial目录下找到header.jes文件并添加<meta name="referrer" content="no-referrer" />即可<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692815843-3752ad86-58e4-4919-bc0e-0eca4274d60e.png#averageHue=%23252221&clientId=u9a70072a-28e9-4&from=paste&height=213&id=udc8f5697&originHeight=266&originWidth=981&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=41450&status=done&style=none&taskId=udd3f34ae-37c0-4bda-a29b-e8f847a08ee&title=&width=784.8" alt="image.png"></li>
+<li>操作完毕后在blog目录下打开git bash here,输入hexo d -g上传并部署<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720693123072-c86dcd95-3e02-4c0f-b915-1f7a77d20145.png#averageHue=%23faf9f9&clientId=u9a70072a-28e9-4&from=paste&height=540&id=ufd4a7ab7&originHeight=675&originWidth=1757&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=217567&status=done&style=none&taskId=u2f921b6d-2434-47f5-89e0-c0ccb3a4e83&title=&width=1405.6" alt="image.png"></li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>day03.计算机网络基础与nmap端口扫描 | bulaize2023</title>
-  <meta name="keywords" content=" 计算机网络 , nmap ">
-  <meta name="description" content="day03.计算机网络基础与nmap端口扫描 | bulaize2023">
+  <title>社工库 | bulaize2023</title>
+  <meta name="keywords" content=" 社工库 ">
+  <meta name="description" content="社工库 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
 <meta property="og:type" content="article">
@@ -538,9 +538,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-day3" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-社工库" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">day03.计算机网络基础与nmap端口扫描</h1>
+        <h1 class="article-title">社工库</h1>
     
     <div class="article-meta">
         
@@ -558,21 +558,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">计算机网络</a>
-            
-            <a class="color5">nmap</a>
+            <a class="color4">社工库</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:16:29'>2024-07-11 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 21:03:51'>2024-07-12 20:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:539</span>
+        <span>字数:161</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -591,7 +589,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">1.计算机网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-vmware%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-text">2.vmware三种网络连接方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8nmap%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="toc-text">3.使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TG%E4%B8%8B%E8%BD%BD"><span class="toc-text">TG下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TG%E7%A4%BE%E5%B7%A5%E5%BA%93"><span class="toc-text">TG社工库</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -607,9 +605,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-计算机网络"><a href="#1-计算机网络" class="headerlink" title="1.计算机网络"></a>1.计算机网络</h1><p>通信是指人与人，人与物，物与物之间通过某种媒介和行为的信息传递和交流<br>信息传递的过程：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720615438876-e738ea23-7ec4-4051-9e1f-98b310fd5b79.png#averageHue=%23d0e4ef&clientId=u6d6c946d-90ad-4&from=paste&height=110&id=ub9208fab&originHeight=137&originWidth=725&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76976&status=done&style=none&taskId=u94c19650-7907-43d0-a278-81fe5f71110&title=&width=580" alt="image.png"><br>IP地址在网络中用于表示一个节点，用于IP报文在网络中寻址<br>IP地址分为A,B,C,D四类，常用A,B,C三类<br>范围0.0.0.0-255.255.255.255<br>A类有效地址:1.0.0.1-126.255.255.254<br>B类有效地址：128.0.0.1-191.255.255.254<br>C类有效地址：192.0.0.1-223.255.255.254<br>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255<br>ipv4与ipv6<br>ipv4表示方法为点分十进制<br>ip数量为2^32<br>ipv6表示方法为十六进制<br>ip数量为2^128</p>
-<h1 id="2-vmware三种网络连接方式"><a href="#2-vmware三种网络连接方式" class="headerlink" title="2.vmware三种网络连接方式"></a>2.vmware三种网络连接方式</h1><p>1.桥接模式：直接调用物理机的物理网卡为虚拟机分配一个真实的IP地址，虚拟机可以使用该IP与局域网内其他的物理机互相通信。<br>2.nat模式：将物理机单做一台路由器通过物理机上的虚拟网卡给虚拟机分配一个虚假的IP地址，虚拟机使用该IP地址可以实现上网，但实际上网的IP地址是物理机的IP<br>3.仅主机模式：仅主机模式的虚拟网卡仅对主机可见，并在虚拟机和主机系统之间提供网络连接。在一般情况下，使用仅主机模式网络连接的虚拟机无法连接到Internet。</p>
-<h2 id="3-使用nmap进行端口扫描"><a href="#3-使用nmap进行端口扫描" class="headerlink" title="3.使用nmap进行端口扫描"></a>3.使用nmap进行端口扫描</h2><p>NMAP 是一款免费开源的网络扫描和主机监测工具，主要用于扫描一组主机的网络端口以及所有服务器间程序都要通过网络端口对外提供服务。比如一些常见的端口号：21（FTP服务）、22（SSH连接）、80（HTTP服务）等等，那么我们通过这些服务器开放的端口可以得到很多信息<br>nmap [ 扫描类型 ]  [ 扫描选项 ]  &lt;目标&gt;<br>例如：扫描192.168.1.55下1-1000的所有端口<br>nmap -p 1-1000 192.168.1.55<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720616968685-056f7940-08c5-453c-bfb8-b7a56d494054.png#averageHue=%2331313e&clientId=u6d6c946d-90ad-4&from=paste&height=165&id=u54509dcc&originHeight=206&originWidth=641&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39928&status=done&style=none&taskId=u5d21a77f-ec42-47e0-9998-c1e562e7f86&title=&width=512.8" alt="image.png"></p>
+        <h1 id="TG下载"><a href="#TG下载" class="headerlink" title="TG下载"></a>TG下载</h1><p><a href="https://telegram.org/">https://telegram.org/</a><br>电脑上下载好了之后在现在一份手机版的并发送给自己的手机</p>
+<ol>
+<li>打开<a href="https://sms-activate.io/cn">https://sms-activate.io/cn</a>并注册好账号<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720697187081-358df64e-7285-4de8-ba91-502133d88607.png#averageHue=%2397cf7b&clientId=u15a4f41c-e32c-4&from=paste&height=486&id=u5c92ed24&originHeight=607&originWidth=1835&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=235968&status=done&style=none&taskId=u91351d38-28de-4928-bea4-201ae753ea4&title=&width=1468" alt="image.png"></li>
+<li>点击用户右下角的+号并充值<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720697341769-f8bfa6c0-90c8-4384-b0e1-356bed9550f8.png#averageHue=%23f39225&clientId=u15a4f41c-e32c-4&from=paste&height=749&id=ua824540d&originHeight=936&originWidth=1650&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=191739&status=done&style=none&taskId=ua7ec109e-09fa-49a3-ba53-2177383fca5&title=&width=1320" alt="image.png"></li>
+<li>手机挂代理，并打开tg-在电脑上购买电话号码-tg上输入电话号码-完成注册<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720697649464-b3ccac60-928f-4fa9-aa44-ead576d054d8.png#averageHue=%23a2d764&clientId=u15a4f41c-e32c-4&from=paste&height=722&id=u451f9768&originHeight=903&originWidth=1728&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=123075&status=done&style=none&taskId=u9cf2172d-bc99-499a-b09f-2bba058c280&title=&width=1382.4" alt="image.png"></li>
+<li>手机扫描登录电脑tg<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720697768297-0d5aca95-9049-4af8-840e-638e0aa1ea62.png#averageHue=%23f0ede4&clientId=u15a4f41c-e32c-4&from=paste&height=616&id=u5ba78c0e&originHeight=770&originWidth=1345&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=504519&status=done&style=none&taskId=u6b0533f6-4e6b-4376-8e4c-d1dfbbebe14&title=&width=1076" alt="image.png"></li>
+<li><code>tg://setlanguage?lang=classic-zh-cn</code>设置中文</li>
+</ol>
+<h1 id="TG社工库"><a href="#TG社工库" class="headerlink" title="TG社工库"></a>TG社工库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">您的专属邀请链接:https://t.me/AJL01_bot?start=C9uZSsbKX1</span><br><span class="line">社工庫机器人: t.me/aishegongkubot?start=AISGK_HBEIR85X</span><br><span class="line">https://t.me/DATA_007bot?start=8989324940</span><br><span class="line">https://t.me/pingansgk_bot?start=ee95c5680f</span><br><span class="line">https://t.me/JokerSGKbot?start=87OE61VQ</span><br><span class="line">https://t.me/PyramidNetBot?start=pRg3K08</span><br><span class="line">https://t.me/XingDun2Bot?start=4eoHoLE</span><br></pre></td></tr></table></figure>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

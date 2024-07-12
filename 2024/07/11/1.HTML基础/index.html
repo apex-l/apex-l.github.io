@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer" />
+  <title>HTML基础 | bulaize2023</title>
+  <meta name="keywords" content=" HTML ">
+  <meta name="description" content="HTML基础 | bulaize2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL基础">
+<meta property="og:url" content="http://example.com/2024/07/12/3.MySQL%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="bulaize2023">
+<meta property="og:description" content="在小皮面板打开MySQL并找到MySQL的bin目录下输入cmd打开命令行  输入mysql -u用户名 -p密码，连接数据库  使用show databases;查看所有数据库  使用create database 数据库名;，创建数据库  use test;使用test数据库  show tables;查看test数据库下所有表   创建用户表 123456create table user">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773334482-3ee6a858-9d6b-4e93-adab-3cbafd207c91.png#averageHue=%23fbfafa&clientId=uf4b43a83-b80b-4&from=paste&height=515&id=u3d7208ca&originHeight=644&originWidth=734&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39035&status=done&style=none&taskId=ueeeda09e-1f99-4e07-aa8e-5faf41fb4b4&title=&width=587.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773344753-2b5a55b0-dd03-4ee1-abf3-e89886e61283.png#averageHue=%23faf8f7&clientId=uf4b43a83-b80b-4&from=paste&height=542&id=uf2ae5771&originHeight=677&originWidth=1172&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=111015&status=done&style=none&taskId=u3ebd5f93-3789-47ea-8f61-be843372925&title=&width=937.6">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773407390-9bd4b337-58f9-4488-ac23-3ea215e80a31.png#averageHue=%231e1d1b&clientId=uf4b43a83-b80b-4&from=paste&height=321&id=u79093dbc&originHeight=401&originWidth=810&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=41202&status=done&style=none&taskId=u9e8ee425-136b-4380-b746-edb14e4772e&title=&width=648">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773581854-4fcd552e-fe65-4e4d-8bd8-db6473b9cc63.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=264&id=udccd0ed8&originHeight=330&originWidth=354&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13247&status=done&style=none&taskId=u03524d0f-670f-4c54-baae-0647f01defd&title=&width=283.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773651771-841d8641-297d-4450-9139-e2a6d3a12756.png#averageHue=%23141210&clientId=uf4b43a83-b80b-4&from=paste&height=45&id=ue491e64c&originHeight=56&originWidth=396&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=4381&status=done&style=none&taskId=ucd888c98-4205-4c46-a8f4-18a35994434&title=&width=316.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773772671-a62abbdc-3306-400a-affc-a48f72020cf5.png#averageHue=%230f0e0e&clientId=uf4b43a83-b80b-4&from=paste&height=46&id=u34d92f3d&originHeight=57&originWidth=709&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3020&status=done&style=none&taskId=u5a839f1b-bfe7-4616-8bdb-9bd0669039d&title=&width=567.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773866985-5515be56-3d2e-4531-a447-98f3252b0938.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=44&id=ub390bf05&originHeight=55&originWidth=419&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3204&status=done&style=none&taskId=u063f2ead-d535-409d-b946-d0355a54f80&title=&width=335.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774282136-9f77fac4-ba28-4e86-8ef8-b253bef02eec.png#averageHue=%2312100f&clientId=uf4b43a83-b80b-4&from=paste&height=253&id=uf1248471&originHeight=316&originWidth=751&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=22788&status=done&style=none&taskId=uf88c009d-49af-4a28-b906-2e893a4e084&title=&width=600.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774464034-5da2259a-cf2b-4686-9b5e-3bb17d143a6d.png#averageHue=%2313110f&clientId=uf4b43a83-b80b-4&from=paste&height=90&id=u335375d6&originHeight=112&originWidth=923&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13547&status=done&style=none&taskId=u8e8bede3-58ef-4490-bfb2-7ba879ede36&title=&width=738.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774525073-6cf605a2-5c0d-4c4c-860d-73fc48c09753.png#averageHue=%23151312&clientId=uf4b43a83-b80b-4&from=paste&height=134&id=u99090300&originHeight=168&originWidth=533&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9948&status=done&style=none&taskId=u194e2bcf-c6e0-4c31-889f-82d763860bf&title=&width=426.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774692012-0b366687-b712-4d9a-b90b-f5ae34c2d9be.png#averageHue=%23110f0e&clientId=uf4b43a83-b80b-4&from=paste&height=211&id=uc7957eec&originHeight=264&originWidth=842&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18663&status=done&style=none&taskId=u3098a05a-c106-42f1-83a1-21467d28818&title=&width=673.6">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774755121-2751d66b-ffc0-4357-84c6-ecc23d70d0ac.png#averageHue=%23141211&clientId=uf4b43a83-b80b-4&from=paste&height=170&id=ufe927fcf&originHeight=212&originWidth=478&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=12118&status=done&style=none&taskId=ud3343aa0-fd37-43f2-9106-2bd8f9e281e&title=&width=382.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720774900167-e2f27b1d-0b01-4167-a233-c977ade4ca81.png#averageHue=%23111010&clientId=uf4b43a83-b80b-4&from=paste&height=313&id=u18c0f949&originHeight=391&originWidth=488&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=17008&status=done&style=none&taskId=udbfaec55-ac29-4e5f-8d31-da61e2781b6&title=&width=390.4">
+<meta property="article:published_time" content="2024-07-12T12:30:30.000Z">
+<meta property="article:modified_time" content="2024-07-12T12:33:51.283Z">
+<meta property="article:author" content="bulaize2023">
+<meta property="article:tag" content="MYSQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720773334482-3ee6a858-9d6b-4e93-adab-3cbafd207c91.png#averageHue=%23fbfafa&clientId=uf4b43a83-b80b-4&from=paste&height=515&id=u3d7208ca&originHeight=644&originWidth=734&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39035&status=done&style=none&taskId=ueeeda09e-1f99-4e07-aa8e-5faf41fb4b4&title=&width=587.2">
+
+
+<link rel="icon" href="/img/LBJ.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/LBJ.jpg"/>
+</a>
+<div class="author">
+    <span>bulaize2023</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/bulaize2023"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(10)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="第一周">
+            
+            第一周
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="第一阶段">
+            
+            第一阶段
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_word_count" value="6.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://bulaize2023.github.io/">bulaize2023</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>钓鱼</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>计算机网络</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>社工库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文章</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语雀</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>day02</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GitHub</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MYSQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nmap</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PHP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/12/3.MySQL%E5%9F%BA%E7%A1%80/"
+           data-tag="MYSQL"
+           data-author="" >
+            <span class="post-title" title="MYSQL基础">MYSQL基础</span>
+            <span class="post-date" title="2024-07-12 20:30:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E5%88%A9%E7%94%A8GitHub%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+           data-tag="GitHub,hexo,博客"
+           data-author="" >
+            <span class="post-title" title="利用GitHub搭建hexo博客">利用GitHub搭建hexo博客</span>
+            <span class="post-date" title="2024-07-12 20:11:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E5%88%B6%E4%BD%9Cpython%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99/"
+           data-tag="python,钓鱼"
+           data-author="" >
+            <span class="post-title" title="制作python钓鱼网站">制作python钓鱼网站</span>
+            <span class="post-date" title="2024-07-12 20:11:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E7%A4%BE%E5%B7%A5%E5%BA%93/"
+           data-tag="社工库"
+           data-author="" >
+            <span class="post-title" title="社工库">社工库</span>
+            <span class="post-date" title="2024-07-12 20:00:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/11/1.HTML%E5%9F%BA%E7%A1%80/"
+           data-tag="HTML"
+           data-author="" >
+            <span class="post-title" title="HTML基础">HTML基础</span>
+            <span class="post-date" title="2024-07-11 20:27:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/11/2.php%E5%9F%BA%E7%A1%80/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="PHP基础">PHP基础</span>
+            <span class="post-date" title="2024-07-11 20:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/11/day3/"
+           data-tag="计算机网络,nmap"
+           data-author="" >
+            <span class="post-title" title="day03.计算机网络基础与nmap端口扫描">day03.计算机网络基础与nmap端口扫描</span>
+            <span class="post-date" title="2024-07-11 19:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/11/day2/"
+           data-tag="day02"
+           data-author="" >
+            <span class="post-title" title="day02">day02</span>
+            <span class="post-date" title="2024-07-11 18:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/10/day1%EF%BC%9A%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="安装软件">安装软件</span>
+            <span class="post-date" title="2024-07-10 19:11:30">2024/07/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/10/%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%BC%A0%E6%96%87%E7%AB%A0/"
+           data-tag="语雀,文章"
+           data-author="" >
+            <span class="post-title" title="语雀上传文章">语雀上传文章</span>
+            <span class="post-date" title="2024-07-10 19:11:30">2024/07/10</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-1.HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HTML基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="第一阶段">第一阶段</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">HTML</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:59:25'>2024-07-11 20:27</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML%E6%A0%87%E9%A2%98"><span class="toc-text">HTML标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E6%AE%B5%E8%90%BD"><span class="toc-text">HTML 段落</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E9%93%BE%E6%8E%A5"><span class="toc-text">HTML 链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E5%9B%BE%E5%83%8F"><span class="toc-text">HTML 图像</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-%E8%A1%A8%E6%A0%BC"><span class="toc-text">HTML 表格</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTMLdiv%E5%85%83%E7%B4%A0"><span class="toc-text">HTMLdiv元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML%E5%AE%9E%E6%88%98"><span class="toc-text">HTML实战</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTML标题"><a href="#HTML标题" class="headerlink" title="HTML标题"></a>HTML标题</h1><p>HTML 标题（Heading）是通过h1 - h6标签来定义的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是标题 1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是标题 2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是标题 3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>这是标题 4<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>这是标题 5<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>这是标题 6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720778759899-fe744a0b-ab25-43ab-9938-c27a8f27fb9d.png#averageHue=%23eeedec&clientId=u4dc549fb-067d-4&from=paste&height=284&id=ub24a4b0c&originHeight=355&originWidth=307&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=16913&status=done&style=none&taskId=ub6e22bb8-2cbd-4836-b73b-884d9c566f5&title=&width=245.6" alt="image.png"></p>
+<h2 id="HTML-段落"><a href="#HTML-段落" class="headerlink" title="HTML 段落"></a>HTML 段落</h2><p>HTML 段落是通过标签p来定义的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720778846896-e1adbc24-1d36-48a9-9d41-59014e55a7e0.png#averageHue=%23f6f5f3&clientId=u4dc549fb-067d-4&from=paste&height=136&id=u06f026d4&originHeight=170&originWidth=194&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=3612&status=done&style=none&taskId=u74f481e2-8ed4-44a3-b241-72394b98c64&title=&width=155.2" alt="image.png"></p>
+<h2 id="HTML-链接"><a href="#HTML-链接" class="headerlink" title="HTML 链接"></a>HTML 链接</h2><p>HTML 链接是通过标签a来定义的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720778952789-c4d923b3-75dc-41cd-803f-f49b32b5dc99.png#averageHue=%23fffefe&clientId=u4dc549fb-067d-4&from=paste&height=69&id=uce3ca250&originHeight=86&originWidth=235&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=1064&status=done&style=none&taskId=u1d80e14b-4042-46f7-a2b9-2d668ffb839&title=&width=188" alt="image.png"></p>
+<h2 id="HTML-图像"><a href="#HTML-图像" class="headerlink" title="HTML 图像"></a>HTML 图像</h2><p>HTML 图像是通过标签img来定义的.<br>img是空标签，意思是说，它只包含属性，并且没有闭合标签。<br>src属性用来存放图片的URL的地址或本机的存储路径<br>alt 属性用来为图像定义一串预备的可替换的文本，在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;https://tse1-mm.cn.bing.net/th/id/OIP-C.g9UbVfyVZX-SfD09JcYr5QHaEK?rs=1&amp;pid=ImgDetMain&quot; alt=&quot;美丽景色&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720779646376-c9b68d0d-bb19-440c-81f5-44a6bf936bf8.png#averageHue=%23747771&clientId=u4dc549fb-067d-4&from=paste&height=325&id=u758ad5c5&originHeight=406&originWidth=686&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=288970&status=done&style=none&taskId=u39eec733-eb58-43ec-9632-3b44a1fff6b&title=&width=548.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720779663041-6efde4fe-8592-4b00-b17c-9b70af6573cb.png#averageHue=%23fcfcfc&clientId=u4dc549fb-067d-4&from=paste&height=163&id=uc665e7cc&originHeight=204&originWidth=633&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=7085&status=done&style=none&taskId=udcecf3ff-3d48-4a42-a563-80ef790ee29&title=&width=506.4" alt="image.png"></p>
+<h1 id="HTML-表格"><a href="#HTML-表格" class="headerlink" title="HTML 表格"></a>HTML 表格</h1><p>HTML 表格由table标签来定义。每个表格均有若干行（由tr标签定义），每行被分割为若干单元格（由td标签定义），表格可以包含标题行（th）用于定义列的标题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;h4&gt;一列:&lt;/h4&gt;</span><br><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;100&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"> </span><br><span class="line">&lt;h4&gt;一行三列:&lt;/h4&gt;</span><br><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;100&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;200&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;300&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"> </span><br><span class="line">&lt;h4&gt;两行三列:&lt;/h4&gt;</span><br><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;100&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;200&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;300&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;400&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;500&lt;/td&gt;</span><br><span class="line">    &lt;td&gt;600&lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720779820002-4c623822-4b8e-4346-a06f-6e6960341bd2.png#averageHue=%23f5f4f4&clientId=u4dc549fb-067d-4&from=paste&height=312&id=u39686eb9&originHeight=390&originWidth=260&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9856&status=done&style=none&taskId=u47d045f6-bc94-4f3c-a7c6-947d91d23d7&title=&width=208" alt="image.png"></p>
+<h2 id="HTMLdiv元素"><a href="#HTMLdiv元素" class="headerlink" title="HTMLdiv元素"></a>HTMLdiv元素</h2><p>HTMLdiv元素是块级元素，它可用于组合其他 HTML 元素的容器。<br>如果与 CSS 一同使用，div 元素可用于对大的内容块设置样式属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        #app&#123;</span><br><span class="line">            background-color: #87CEEB;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 100%;</span><br><span class="line">        &#125;</span><br><span class="line">        #app2&#123;</span><br><span class="line">            background-color: red;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 20%;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;div id=&quot;app2&quot;&gt;</span><br><span class="line">            &lt;iframe src=&quot;https://www.bilibili.com/&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720780051550-06b5f532-236b-4834-b73e-70e76baf0e63.png#averageHue=%2383c2e0&clientId=u4dc549fb-067d-4&from=paste&height=662&id=u231d8250&originHeight=828&originWidth=1864&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=332087&status=done&style=none&taskId=ud82b99c0-a3b5-4e81-a9cb-891bf1541ee&title=&width=1491.2" alt="image.png"></p>
+<h1 id="HTML实战"><a href="#HTML实战" class="headerlink" title="HTML实战"></a>HTML实战</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;系统信息&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body &#123;</span><br><span class="line">            font-family: Arial, sans-serif;</span><br><span class="line">            background-color: #f4f4f4;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .header &#123;</span><br><span class="line">            background-color: #000;</span><br><span class="line">            color: #fff;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .header .left &#123;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">        .header .right &#123;</span><br><span class="line">            float: right;</span><br><span class="line">        &#125;</span><br><span class="line">        .header a &#123;</span><br><span class="line">            color: #fff;</span><br><span class="line">            text-decoration: none;</span><br><span class="line">            margin-right: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .header a:hover &#123;</span><br><span class="line">            text-decoration: underline;</span><br><span class="line">        &#125;</span><br><span class="line">        .container &#123;</span><br><span class="line">            display: flex;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu &#123;</span><br><span class="line">            width: 20%;</span><br><span class="line">            background-color: #f8f8f8;</span><br><span class="line">            padding: 20px;</span><br><span class="line">            box-shadow: 2px 0 5px rgba(0,0,0,0.1);</span><br><span class="line">        &#125;</span><br><span class="line">        .menu h3 &#123;</span><br><span class="line">            background-color: #ddd;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            margin-top: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul &#123;</span><br><span class="line">            list-style-type: none;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul li &#123;</span><br><span class="line">            margin: 10px 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul li a &#123;</span><br><span class="line">            color: #333;</span><br><span class="line">            text-decoration: none;</span><br><span class="line">            display: block;</span><br><span class="line">            padding: 5px 10px;</span><br><span class="line">            border-radius: 4px;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul li a:hover, .menu ul li a.active &#123;</span><br><span class="line">            background-color: #ddd;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul li ul &#123;</span><br><span class="line">            display: none;</span><br><span class="line">            margin-top: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        .menu ul li ul li &#123;</span><br><span class="line">            margin: 5px 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .content &#123;</span><br><span class="line">            width: 80%;</span><br><span class="line">            padding: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box &#123;</span><br><span class="line">            background-color: #fff;</span><br><span class="line">            padding: 20px;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line">            box-shadow: 0 0 5px rgba(0,0,0,0.1);</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box h2 &#123;</span><br><span class="line">            margin-top: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box table &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            border-collapse: collapse;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box table, .content .box th, .content .box td &#123;</span><br><span class="line">            border: 1px solid #ddd;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box th, .content .box td &#123;</span><br><span class="line">            padding: 8px;</span><br><span class="line">            text-align: left;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box th &#123;</span><br><span class="line">            background-color: #f2f2f2;</span><br><span class="line">        &#125;</span><br><span class="line">        .content .box .dotted-line &#123;</span><br><span class="line">            border-bottom: 1px dotted #ccc;</span><br><span class="line">        &#125;</span><br><span class="line">        .footer &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            background-color: #f1f1f1;</span><br><span class="line">            margin-top: 20px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function toggleMenu(id) &#123;</span><br><span class="line">            var menu = document.getElementById(id);</span><br><span class="line">            if (menu.style.display === &#x27;none&#x27; || menu.style.display === &#x27;&#x27;) &#123;</span><br><span class="line">                menu.style.display = &#x27;block&#x27;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                menu.style.display = &#x27;none&#x27;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;网站首页&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;管理员&lt;/a&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;修改密码&lt;/a&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;退出&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">    .menu h3 &#123;</span><br><span class="line">        background-color: #ddd;</span><br><span class="line">        padding: 10px;</span><br><span class="line">        margin-top: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul &#123;</span><br><span class="line">        list-style-type: none;</span><br><span class="line">        padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li &#123;</span><br><span class="line">        margin: 10px 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li a &#123;</span><br><span class="line">        color: #333;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">        display: block;</span><br><span class="line">        padding: 5px 10px;</span><br><span class="line">        border-radius: 4px;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li a.main-menu-item &#123;</span><br><span class="line">        background-color: #ccc; /* 背景改为灰色 */</span><br><span class="line">        color: #000; /* 文字颜色为黑色 */</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li a:hover, .menu ul li a.active &#123;</span><br><span class="line">        background-color: #444;</span><br><span class="line">        color: #fff;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li ul &#123;</span><br><span class="line">        display: none;</span><br><span class="line">        margin-top: 10px;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li ul li &#123;</span><br><span class="line">        margin: 5px 0;</span><br><span class="line">        border-bottom: 1px dotted #ccc; /* 每行之间添加虚线分隔符 */</span><br><span class="line">    &#125;</span><br><span class="line">    .menu ul li ul li:last-child &#123;</span><br><span class="line">        border-bottom: none; /* 去掉最后一个元素的虚线 */</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">        &lt;div class=&quot;menu&quot;&gt;</span><br><span class="line">            &lt;h3&gt;菜单&lt;/h3&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;</span><br><span class="line">                    &lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;toggleMenu(&#x27;commonOps&#x27;)&quot;&gt;</span><br><span class="line">                         &lt;b&gt;📘常用操作&lt;/b&gt;</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                    &lt;ul id=&quot;commonOps&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;📄作品管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;📃博文管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;📚分类管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;✉️留言管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;☁️评论管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🔌友情链接&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🧩广告管理&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/li&gt;</span><br><span class="line">                &lt;li&gt;</span><br><span class="line">                    &lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;toggleMenu(&#x27;sysOps&#x27;)&quot;&gt;</span><br><span class="line">                       &lt;b&gt;⚙️系统管理&lt;/b&gt;</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                    &lt;ul id=&quot;sysOps&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🔧系统设置&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🗑️清理缓存&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🔁数据备份&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;🔄️数据还原&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;h2&gt;快捷操作&lt;/h2&gt;</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;🪪新增作品&lt;/a&gt; |</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;📋新增博文&lt;/a&gt; |</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;📙新增作品分类&lt;/a&gt; |</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;🔖新增博客分类&lt;/a&gt; |</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;😗作品评论&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;h2&gt;系统基本信息&lt;/h2&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;操作系统 WINNT&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;运行环境 Apache/2.2.21（win64）PHP/5.3.10&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;PHP运行方式 apache2handler&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;静静设计-版本 v-0.1&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;上传附件限制 2M&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;北京时间 &lt;?php echo date(&#x27;Y年m月d日 H:i:s&#x27;); ?&gt;&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;服务器域名/IP localhost[127.0.0.1]&lt;/div&gt;</span><br><span class="line">                &lt;div class=&quot;dotted-line&quot;&gt;Host 127.0.0.1&lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">                &lt;h2&gt;使用帮助&lt;/h2&gt;</span><br><span class="line">                &lt;p&gt;更多模板：&lt;a href=&quot;http://www.bilibili.com/&quot;&gt;源代码-免费下载&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;footer&quot;&gt;</span><br><span class="line">        📢欢迎使用【豪情】博客程序，建博的首选工具。</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720780162474-25a809fe-4524-43b9-8d34-71f87c3d7501.png#averageHue=%23eaeaea&clientId=u4dc549fb-067d-4&from=paste&height=749&id=uc7488d1b&originHeight=936&originWidth=1866&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=95002&status=done&style=none&taskId=ufda6d1a1-df9e-469d-aa68-7b6428ecf0c&title=&width=1492.8" alt="image.png"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 18px 3px 15px 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
