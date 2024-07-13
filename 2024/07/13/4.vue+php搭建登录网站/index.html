@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>语雀上传文章 | bulaize2023</title>
-  <meta name="keywords" content=" 语雀 , 文章 ">
-  <meta name="description" content="语雀上传文章 | bulaize2023">
+  <title>vue+php搭建登录网站 | bulaize2023</title>
+  <meta name="keywords" content=" vue , php , 搭建网站 ">
+  <meta name="description" content="vue+php搭建登录网站 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="vue(前端)vue初步布局&lt;!DOCTYPE html&gt;   &lt;html lang&#x3D;&quot;en&quot;&gt;    &lt;head&gt;   &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;   &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, i">
 <meta property="og:type" content="article">
@@ -557,9 +557,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-语雀上传文章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-4.vue+php搭建登录网站" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">语雀上传文章</h1>
+        <h1 class="article-title">vue+php搭建登录网站</h1>
     
     <div class="article-meta">
         
@@ -569,7 +569,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="第一周">第一周</a>
+            <a  data-rel="第一阶段">第一阶段</a>
             
         </span>
         
@@ -577,21 +577,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">语雀</a>
+            <a class="color4">vue</a>
             
-            <a class="color3">文章</a>
+            <a class="color4">php</a>
+            
+            <a class="color5">搭建网站</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 21:06:16'>2024-07-10 19:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-13 19:23:59'>2024-07-13 19:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:158</span>
+        <span>字数:951</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -610,7 +612,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-%E5%89%8D%E7%AB%AF"><span class="toc-text">vue(前端)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E5%88%9D%E6%AD%A5%E5%B8%83%E5%B1%80"><span class="toc-text">vue初步布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8element%E5%92%8Cai%E5%88%B6%E4%BD%9C%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2"><span class="toc-text">使用element和ai制作登录页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E8%AF%B4%E6%98%8E"><span class="toc-text">解释说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#php-%E5%90%8E%E7%AB%AF"><span class="toc-text">php(后端)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">创建数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E8%84%9A%E6%9C%AC"><span class="toc-text">后端脚本</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -626,18 +628,218 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>选择一篇文章公开<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692081635-214ea6bd-3eba-4014-b3a2-abf67793b136.png#averageHue=%23f9f8f8&clientId=ua656a4ee-80a4-4&from=paste&height=380&id=u0060f307&originHeight=475&originWidth=1035&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=63521&status=done&style=none&taskId=u9b8f7cc0-4fa4-46cb-8bda-a537a4049fd&title=&width=828" alt="image.png"></li>
-<li>点击文章右边三个点在点击导出<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692175688-b63ccaa7-e9dc-4fe9-bc3a-f4acb7c9169a.png#averageHue=%23f8f8f8&clientId=u5cc12ed4-2c26-4&from=paste&height=409&id=ue4894fbc&originHeight=511&originWidth=396&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=21430&status=done&style=none&taskId=u89c85526-3af5-41a0-b70c-ab959121d7e&title=&width=316.8" alt="image.png"></li>
-<li>选择以markdown形式导出，然后在下一页选择导出 LaTeX 公式为 Markdown 语法<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692298115-f48a3150-68df-4fee-817d-b09ab8969b5a.png#averageHue=%23fdfdfc&clientId=u5cc12ed4-2c26-4&from=paste&height=329&id=u51a61f93&originHeight=411&originWidth=758&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=24047&status=done&style=none&taskId=ud65fbf39-8826-4a9b-802a-04b3d2a76e4&title=&width=606.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692313644-906be92f-abae-4ec4-b8c9-6ff105b7c18c.png#averageHue=%23fbfbfb&clientId=u5cc12ed4-2c26-4&from=paste&height=306&id=ub5613a41&originHeight=383&originWidth=780&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=22955&status=done&style=none&taskId=uf7e92114-f4f0-4dfb-bf29-ba4c1974050&title=&width=624" alt="image.png"></li>
-<li>导出到blog文件夹下的source文件夹下的_posts文件夹里面<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692405915-1d383492-c4c4-4f73-bc34-95f479dcadf8.png#averageHue=%23faf9f9&clientId=u5cc12ed4-2c26-4&from=paste&height=167&id=u66ebdb25&originHeight=209&originWidth=951&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=24836&status=done&style=none&taskId=u24d77146-dae0-46e9-8869-efcb1e1dfe3&title=&width=760.8" alt="image.png"></li>
-<li>双击刚刚导出文件以vscode打开并添加标题</li>
+        <h1 id="vue-前端"><a href="#vue-前端" class="headerlink" title="vue(前端)"></a>vue(前端)</h1><h2 id="vue初步布局"><a href="#vue初步布局" class="headerlink" title="vue初步布局"></a>vue初步布局</h2><pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot;&gt;
+
+  &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;./index.css&quot;&gt;
+  &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;
+
+
+
+  &lt;/div&gt;
+
+
+  &lt;script src=&quot;./axios.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+  new Vue(&#123;
+    el: &#39;#app&#39;,
+    data: function () &#123;
+      return &#123;
+        visible: false,
+          &#125;
+    &#125;,
+    created() &#123;
+    this.login();
+    &#125;,
+    methods: &#123;
+                login:function()&#123;
+
+                &#125;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2 id="使用element和ai制作登录页面"><a href="#使用element和ai制作登录页面" class="headerlink" title="使用element和ai制作登录页面"></a>使用element和ai制作登录页面</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;./index.css&quot;&gt;
+    &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        body &#123;
+            margin: 0;
+        &#125;
+        #zhong &#123;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            max-width: 800px;
+            height: 50%;
+            max-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: #7a368b; */
+            background-repeat: no-repeat;
+            background-size: cover;
+        &#125;
+
+        #all &#123;
+            /* 设置元素宽度和高度为浏览器视口宽度和高度 */
+            width: 100vw;
+            height: 100vh;
+
+            /* 设置盒模型 */
+            box-sizing: border-box;
+
+            /* 设置边距 */
+            margin: 0;
+
+            /* 设置背景渐变 */
+            background: radial-gradient(circle, #3f87a6, #1e3c72);
+
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;div id=&quot;all&quot;&gt;
+            &lt;div id=&quot;zhong&quot;&gt;
+                &lt;table&gt;
+
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;el-input v-model=&quot;userData.username&quot; placeholder=&quot;请输入用户名&quot;&gt;&lt;/el-input&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;el-input v-model=&quot;userData.password&quot; placeholder=&quot;请输入密码&quot; show-password&gt;&lt;/el-input&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;el-button type=&quot;primary&quot; @click=&quot;login&quot;&gt;登录&lt;/el-button&gt;
+                            &lt;el-button type=&quot;primary&quot;&gt;重置&lt;/el-button&gt;
+
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+
+                &lt;/table&gt;
+
+            &lt;/div&gt;
+
+
+        &lt;/div&gt;
+
+
+    &lt;/div&gt;
+
+
+    &lt;script src=&quot;./axios.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        new Vue(&#123;
+            el: &#39;#app&#39;,
+            data: function () &#123;
+                return &#123;
+                    visible: false,
+                    userData: &#123;
+                        username: &#39;&#39;,
+                        password: &#39;&#39;,
+                    &#125;
+
+                &#125;
+            &#125;,
+            created() &#123;
+                this.login2();
+            &#125;,
+            methods: &#123;
+                login: function () &#123;
+                    axios.post(&#39;/api/login.php&#39;, this.userData)
+                        .then((response) =&gt; &#123;
+                            console.log(response);
+                            if (response.data.includes(&#39;success&#39;)) &#123;
+                                this.open1();
+                            &#125; else &#123;
+                                this.open4();
+                            &#125;
+                        &#125;)
+                        .catch((error) =&gt; &#123;
+                            console.log(&#39;发送失败:&#39;, error);
+                        &#125;)
+                &#125;,
+                open1() &#123;
+                    this.$notify(&#123;
+                        title: &#39;成功&#39;,
+                        message: &#39;这是一条成功的提示消息&#39;,
+                        type: &#39;success&#39;
+                    &#125;);
+                &#125;,
+                open4() &#123;
+                    this.$notify.error(&#123;
+                        title: &#39;错误&#39;,
+                        message: &#39;这是一条错误的提示消息&#39;
+                    &#125;);
+                &#125;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2 id="解释说明"><a href="#解释说明" class="headerlink" title="解释说明"></a>解释说明</h2><ol>
+<li>用户框和密码框里的值通过Vue.js框架中的v-model指令与下方Vue框架的里data选项里的userData对象里的username和password绑定<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720866319894-53f1fc4d-9b64-4629-8c8c-88a6469aea17.png#averageHue=%2321201f&clientId=uaa23d5a9-35c1-4&from=paste&height=154&id=u32e42792&originHeight=193&originWidth=909&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=17912&status=done&style=none&taskId=u43e6b06b-c693-413d-8395-7de59b6b217&title=&width=727.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720866333411-6e7262ab-e3a1-4c0c-86b7-fe1536332098.png#averageHue=%23201f1f&clientId=uaa23d5a9-35c1-4&from=paste&height=215&id=u72461b8e&originHeight=269&originWidth=360&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10780&status=done&style=none&taskId=u4254d8b2-518c-4f5d-b0e2-ea95f38d153&title=&width=288" alt="image.png"></li>
+<li>登录按钮标签里使用click点击事件并绑定methods选项里的login方法，使用户在输入完用户名和密码并点击登录按钮之后触发login方法<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720867302167-e2be0c08-46ea-46ea-983d-3c8a9734b24c.png#averageHue=%23201f1f&clientId=uaa23d5a9-35c1-4&from=paste&height=518&id=u1fa72d4e&originHeight=648&originWidth=1156&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=77714&status=done&style=none&taskId=u096533d4-9fd1-41ff-bb70-9362cbac786&title=&width=924.8" alt="image.png"></li>
 </ol>
-<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692564290-e3330fb6-aad3-4cde-aa38-bcdf531f9c6b.png#averageHue=%23262423&clientId=u9a70072a-28e9-4&from=paste&height=298&id=u0ef16a75&originHeight=372&originWidth=1234&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=58797&status=done&style=none&taskId=u48b74e06-e3dd-4c36-a384-7a0422e47fb&title=&width=987.2" alt="image.png"></p>
-<ol start="6">
-<li>因为语雀有防盗链，导致文件里的图片无法在博客上显示所以我们要在D:\tools\lgit\blog\themes\3-hexo\layout_partial目录下找到header.jes文件并添加<meta name="referrer" content="no-referrer" />即可<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720692815843-3752ad86-58e4-4919-bc0e-0eca4274d60e.png#averageHue=%23252221&clientId=u9a70072a-28e9-4&from=paste&height=213&id=udc8f5697&originHeight=266&originWidth=981&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=41450&status=done&style=none&taskId=udd3f34ae-37c0-4bda-a29b-e8f847a08ee&title=&width=784.8" alt="image.png"></li>
-<li>操作完毕后在blog目录下打开git bash here,输入hexo d -g上传并部署<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720693123072-c86dcd95-3e02-4c0f-b915-1f7a77d20145.png#averageHue=%23faf9f9&clientId=u9a70072a-28e9-4&from=paste&height=540&id=ufd4a7ab7&originHeight=675&originWidth=1757&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=217567&status=done&style=none&taskId=u2f921b6d-2434-47f5-89e0-c0ccb3a4e83&title=&width=1405.6" alt="image.png"></li>
-</ol>
+<h1 id="php-后端"><a href="#php-后端" class="headerlink" title="php(后端)"></a>php(后端)</h1><p>头部文件</p>
+<pre><code>header(&quot;Access-Control-Allow-Origin: *&quot;);
+header(&quot;Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE&quot;);
+header(&quot;Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With&quot;);
+header(&#39;content-type: text/html; charset=utf-8&#39;);
+</code></pre>
+<h2 id="创建数据"><a href="#创建数据" class="headerlink" title="创建数据"></a>创建数据</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720867531414-5f2f62dc-2e2f-4d39-9d97-f6c4d3cdcbfc.png#averageHue=%23e8e6e3&clientId=uaa23d5a9-35c1-4&from=paste&height=167&id=uf5fed853&originHeight=209&originWidth=296&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13243&status=done&style=none&taskId=u189a52b1-fe38-4f30-a7bf-84032c08e9e&title=&width=236.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720867563922-0dd54ba1-c914-4e56-8436-f47b6a551da9.png#averageHue=%23f7f6f6&clientId=uaa23d5a9-35c1-4&from=paste&height=180&id=u0c4fadf8&originHeight=225&originWidth=536&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=10515&status=done&style=none&taskId=u7a5d1eed-ac9a-4033-ac2c-998e26a76d3&title=&width=428.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720868279169-68a1cdd7-ed62-4f83-ae40-c0773807de50.png#averageHue=%23f6f5f4&clientId=uaa23d5a9-35c1-4&from=paste&height=215&id=drl27&originHeight=269&originWidth=1045&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=23506&status=done&style=none&taskId=u67183968-3bd3-414e-acb3-e6b8cdcb093&title=&width=836" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720868317051-c5acc457-d231-4b6f-a489-a0919355a611.png#averageHue=%23f7f7f6&clientId=uaa23d5a9-35c1-4&from=paste&height=413&id=ubf8db591&originHeight=516&originWidth=1268&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=51605&status=done&style=none&taskId=u02c36e25-f14b-49cf-a45f-33efef80add&title=&width=1014.4" alt="image.png"></p>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><pre><code>$link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;test&quot;) or exit(&quot;连接失败: &quot; . mysqli_connect_error());
+mysqli_query($link, &quot;set names &#39;utf8&#39;&quot;);
+</code></pre>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720869015532-8d8cbb15-a8f4-4484-830c-8b7345cba834.png#averageHue=%2321201f&clientId=uaa23d5a9-35c1-4&from=paste&height=123&id=u1b5f7a83&originHeight=154&originWidth=1310&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39645&status=done&style=none&taskId=uae6db884-7d9d-4b41-9498-8295fe7732a&title=&width=1048" alt="image.png"></p>
+<h2 id="后端脚本"><a href="#后端脚本" class="headerlink" title="后端脚本"></a>后端脚本</h2><pre><code>$inputJSON = file_get_contents(&#39;php://input&#39;);
+$input=json_decode($inputJSON,true);
+if ($input == null) &#123;
+    header(&#39;HTTP/1.1 400 Bad Request&#39;);
+    echo json_encode([&#39;error&#39; =&gt; &#39;no JSON&#39;]);
+&#125; else &#123;
+    $name = $input[&#39;username&#39;];
+    $pass = $input[&#39;password&#39;];
+    $sql = &quot;select * from users where username = &#39;$name&#39; and password = &#39;$pass&#39;&quot;;
+    $result = mysqli_query($link, $sql);
+    if (mysqli_num_rows($result) &gt; 0) &#123;
+        echo &quot;success&quot;;
+    &#125; else &#123;
+        echo &quot;fail&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720869590245-96c4ba48-2ae4-44a2-a702-e29b185ab278.png#averageHue=%2321201f&clientId=uaa23d5a9-35c1-4&from=paste&height=405&id=uc6432d58&originHeight=506&originWidth=1311&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=105800&status=done&style=none&taskId=ua963417d-17f8-4020-8389-1daf3407b4a&title=&width=1048.8" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
