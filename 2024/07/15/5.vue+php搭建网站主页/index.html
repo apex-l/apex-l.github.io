@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>利用GitHub搭建hexo博客 | bulaize2023</title>
-  <meta name="keywords" content=" GitHub , hexo , 博客 ">
-  <meta name="description" content="利用GitHub搭建hexo博客 | bulaize2023">
+  <title>vue+php搭建网站首页 | bulaize2023</title>
+  <meta name="keywords" content=" vue , php , 网站 ">
+  <meta name="description" content="vue+php搭建网站首页 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="vue(前端)vue初步布局&lt;!DOCTYPE html&gt;   &lt;html lang&#x3D;&quot;en&quot;&gt;    &lt;head&gt;   &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;   &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, i">
 <meta property="og:type" content="article">
@@ -566,9 +566,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-利用GitHub搭建hexo个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-5.vue+php搭建网站主页" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">利用GitHub搭建hexo博客</h1>
+        <h1 class="article-title">vue+php搭建网站首页</h1>
     
     <div class="article-meta">
         
@@ -578,7 +578,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="第一周">第一周</a>
+            <a  data-rel="第一阶段">第一阶段</a>
             
         </span>
         
@@ -586,23 +586,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">GitHub</a>
+            <a class="color4">vue</a>
             
-            <a class="color5">hexo</a>
+            <a class="color4">php</a>
             
-            <a class="color3">博客</a>
+            <a class="color3">网站</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-12 20:12:58'>2024-07-12 20:11</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-15 20:09:36'>2024-07-15 20:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:768</span>
+        <span>字数:897</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -621,7 +621,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%88%A9%E7%94%A8GitHub%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2"><span class="toc-text">1.利用GitHub搭建hexo博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83"><span class="toc-text">1.1准备环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">1.2操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3hexo%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.3hexo命令介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4hexo%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">1.4hexo目录结构</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%A6%96%E9%A1%B5%E5%88%B6%E4%BD%9C"><span class="toc-text">1.首页制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%88%B6%E4%BD%9C%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0%E9%A1%B5%E9%9D%A2"><span class="toc-text">2.制作新增文章页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%88%B6%E4%BD%9C%E6%96%87%E7%AB%A0%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2"><span class="toc-text">3.制作文章预览页面</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -637,27 +637,147 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-利用GitHub搭建hexo博客"><a href="#1-利用GitHub搭建hexo博客" class="headerlink" title="1.利用GitHub搭建hexo博客"></a>1.利用GitHub搭建hexo博客</h1><h2 id="1-1准备环境"><a href="#1-1准备环境" class="headerlink" title="1.1准备环境"></a>1.1准备环境</h2><ol>
-<li>提前安装好(node.js)[<a href="https://nodejs.org/en">https://nodejs.org/en</a>] 左边的那个<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720573887159-8a0e7c25-2231-41ec-9c55-881bdfc92bea.png#averageHue=%23e1ecdb&clientId=u63726a5b-906c-4&from=paste&height=634&id=u4e52b915&originHeight=793&originWidth=1215&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=372115&status=done&style=none&taskId=ud448b868-884a-4e7f-99a0-715f63ec008&title=&width=972" alt="image.png"></li>
-<li>提前安装好(GIt)[<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>]</li>
+        <h1 id="1-首页制作"><a href="#1-首页制作" class="headerlink" title="1.首页制作"></a>1.首页制作</h1><ol>
+<li>使用element选取自己想要的容器布局样式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721040456277-9cef7955-d983-43c3-a788-b585cf4f7c90.png#averageHue=%23f5f9f9&clientId=u5a7c8ae9-3d60-4&from=paste&height=307&id=u25ad09ec&originHeight=384&originWidth=1504&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18612&status=done&style=none&taskId=u2f51adfb-5e87-4ff4-81c6-c6f53edb96c&title=&width=1203.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721040548262-5773f91d-2ccd-4ed1-8885-3eccf2f5585e.png#averageHue=%23f9f9f9&clientId=u5a7c8ae9-3d60-4&from=paste&height=498&id=ubc1bd413&originHeight=622&originWidth=668&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=31419&status=done&style=none&taskId=ucc05e008-5558-4dcf-975a-916564cdb10&title=&width=534.4" alt="image.png"></li>
+<li>在element选择导航样式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721040635131-de731497-3336-4752-af5c-4d5bca033b26.png#averageHue=%23fefefe&clientId=u5a7c8ae9-3d60-4&from=paste&height=724&id=u93df82d2&originHeight=905&originWidth=1533&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76063&status=done&style=none&taskId=u87317299-f744-4727-aaf7-03a526ec70b&title=&width=1226.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721040657795-6e9f2238-52ee-48d5-b6f7-c529980fdef7.png#averageHue=%23faf9f9&clientId=u5a7c8ae9-3d60-4&from=paste&height=623&id=u60eb20a4&originHeight=779&originWidth=1079&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=52187&status=done&style=none&taskId=ue51181a6-ca8a-484f-a0de-5af66af8124&title=&width=863.2" alt="image.png"></li>
+<li>根据自己的需求更改样式</li>
 </ol>
-<p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720573942616-8a3742ad-6b15-450d-8f23-042ed0945db4.png#averageHue=%23f1f0ea&clientId=u63726a5b-906c-4&from=paste&height=414&id=u6fcfa411&originHeight=517&originWidth=1213&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=253599&status=done&style=none&taskId=u40d0450f-a0e6-4495-8d1e-a8877c344a4&title=&width=970.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720573968667-ce452028-e4bb-49ab-8c74-ce7dea4492cc.png#averageHue=%23f3f2ed&clientId=u63726a5b-906c-4&from=paste&height=489&id=u887f2385&originHeight=611&originWidth=1118&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=212878&status=done&style=none&taskId=u3d48ee21-3b4c-4dd7-86ce-17f48399222&title=&width=894.4" alt="image.png"></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body &#123;
+            margin: 0;
+        &#125;
+
+        #ce &#123;
+            width: 100vm;
+            height: 100vh;
+            background-color: rgb(84, 92, 100);
+        &#125;
+    &lt;/style&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?php echo $lujing; ?&gt;/index.css&quot;&gt;
+    &lt;script src=&quot;&lt;?php echo $lujing; ?&gt;/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;el-container&gt;
+            &lt;el-aside id=&quot;ce&quot;&gt;
+                &lt;el-row class=&quot;tac&quot;&gt;
+                    &lt;el-col :span=&quot;24&quot;&gt;
+                        &lt;el-menu default-active=&quot;2&quot; class=&quot;el-menu-vertical-demo&quot; @open=&quot;handleOpen&quot; @close=&quot;handleClose&quot; background-color=&quot;#545c64&quot; text-color=&quot;#fff&quot; active-text-color=&quot;#ffd04b&quot;&gt;
+                            &lt;el-submenu index=&quot;1&quot;&gt;
+                                &lt;template slot=&quot;title&quot;&gt;
+                                    &lt;i class=&quot;el-icon-location&quot;&gt;&lt;/i&gt;
+                                    &lt;span&gt;文章管理&lt;/span&gt;
+                                &lt;/template&gt;
+                                &lt;el-menu-item-group&gt;
+                                    &lt;el-menu-item index=&quot;1-1&quot; @click=&quot;router1()&quot;&gt;新增文章&lt;/el-menu-item&gt;
+                                    &lt;el-menu-item index=&quot;1-2&quot;&gt;文章编辑&lt;/el-menu-item&gt;
+                                    &lt;el-menu-item index=&quot;1-3&quot; @click=&quot;router3()&quot;&gt;文章预览&lt;/el-menu-item&gt;
+                            &lt;/el-submenu&gt;
+                            &lt;el-menu-item index=&quot;2&quot;&gt;
+                                &lt;i class=&quot;el-icon-menu&quot;&gt;&lt;/i&gt;
+                                &lt;span slot=&quot;title&quot;&gt;用户管理&lt;/span&gt;
+                            &lt;/el-menu-item&gt;
+                        &lt;/el-menu&gt;
+                    &lt;/el-col&gt;
+                &lt;/el-row&gt;
+            &lt;/el-aside&gt;
+            &lt;el-main&gt;
+            &lt;iframe :src=&quot;iframeSrc&quot;  frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;&lt;/iframe&gt;
+            &lt;/el-main&gt;
+        &lt;/el-container&gt;
+
+
+    &lt;/div&gt;
+    &lt;?php
+    $lujing = &quot;..&quot;;
+    ?&gt;
+
+    &lt;script src=&quot;&lt;?php echo $lujing; ?&gt;/axios.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;&lt;?php echo $lujing; ?&gt;/index.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        new Vue(&#123;
+            el: &#39;#app&#39;,
+            data: function() &#123;
+                return &#123;
+                    visible: false,
+                    iframeSrc:&quot;add.php&quot;,
+                &#125;
+            &#125;,
+            created() &#123;
+                this.login();
+            &#125;,
+            methods: &#123;
+                login: function() &#123;
+
+                &#125;,
+                handleOpen(key, keyPath) &#123;
+                    console.log(key, keyPath);
+                &#125;,
+                handleClose(key, keyPath) &#123;
+                    console.log(key, keyPath);
+                &#125;,
+                router1()&#123;
+                    this.iframeSrc = &quot;add.php&quot;;
+                &#125;,
+                router3()&#123;
+                    this.iframeSrc = &quot;article.php&quot;;
+                &#125;
+            &#125;
+        &#125;)
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<ol start="4">
+<li>结果展示<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721040859608-443a0121-5a66-4aa7-be8c-d093862d8ced.png#averageHue=%23fefefe&clientId=u5a7c8ae9-3d60-4&from=paste&height=780&id=H51Dc&originHeight=975&originWidth=1844&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=28470&status=done&style=none&taskId=ub80bb075-d528-48e6-9935-d3461190b12&title=&width=1475.2" alt="image.png"></li>
+</ol>
+<h1 id="2-制作新增文章页面"><a href="#2-制作新增文章页面" class="headerlink" title="2.制作新增文章页面"></a>2.制作新增文章页面</h1><ol>
+<li>在element选择表单样式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721041158201-a9b9c547-6dee-40b0-a3e1-690dbd3cfd08.png#averageHue=%23fcfcfc&clientId=u5a7c8ae9-3d60-4&from=paste&height=720&id=ud4534a62&originHeight=900&originWidth=1551&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=104358&status=done&style=none&taskId=u48efaa08-b67b-44d6-9541-269b397c35e&title=&width=1240.8" alt="image.png"></li>
+<li>修改选择日期框添加立即创建和取消按钮<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721041475386-2bb47fdd-7286-4dcc-b01e-5b9c4bba22a7.png#averageHue=%23fefefe&clientId=u5a7c8ae9-3d60-4&from=paste&height=487&id=u03fc83ff&originHeight=609&originWidth=863&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=28065&status=done&style=none&taskId=uba792b61-2c2b-4659-9c4f-a1fe90b2099&title=&width=690.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721041668954-cc70af45-d7dc-4b00-84fa-94fa7192c6f0.png#averageHue=%23f9f9f9&clientId=u5a7c8ae9-3d60-4&from=paste&height=130&id=uda866b17&originHeight=163&originWidth=1019&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=13020&status=done&style=none&taskId=u55d95661-4524-4087-9daa-9ea4892eed7&title=&width=815.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721041707192-dc259b3d-b202-400e-9718-4457993caeb9.png#averageHue=%23f8f8f8&clientId=u5a7c8ae9-3d60-4&from=paste&height=83&id=u08484bd0&originHeight=104&originWidth=686&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=9861&status=done&style=none&taskId=u760d3b25-0ff7-4d3e-ad41-9872d407ca5&title=&width=548.8" alt="image.png"></li>
+<li>根据自己需求修改样式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721042262268-d7274e56-eca5-4fb7-b65f-aee1b46f36ff.png#averageHue=%23201f1f&clientId=u5a7c8ae9-3d60-4&from=paste&height=558&id=u7f00c734&originHeight=697&originWidth=1343&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=101057&status=done&style=none&taskId=u5c113c61-c5b3-435d-bd72-a9bd72cfa39&title=&width=1074.4" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721042520404-662b3639-1b4e-4f95-96a5-6aa70cbd143c.png#averageHue=%23201f1f&clientId=u5a7c8ae9-3d60-4&from=paste&height=646&id=uc1dacfec&originHeight=807&originWidth=1120&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=87210&status=done&style=none&taskId=u3e1d953a-476d-45de-ad0d-c1863f79232&title=&width=896" alt="image.png"></li>
+<li>在首页设置点击事件，使鼠标点击新增文章使跳转到相应的页面<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721042975516-8f80fc17-3903-408f-9e4e-13715eb5d7c6.png#averageHue=%23222120&clientId=u5a7c8ae9-3d60-4&from=paste&height=65&id=u08a8e72c&originHeight=81&originWidth=724&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=11992&status=done&style=none&taskId=uba8a5d1c-7eb5-4a39-9e9f-10c1ae8d891&title=&width=579.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721043119856-58b53309-caae-4715-a1f1-aaced95588ac.png#averageHue=%2320201f&clientId=u5a7c8ae9-3d60-4&from=paste&height=447&id=uc0293bc5&originHeight=559&originWidth=911&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=37283&status=done&style=none&taskId=ud4564dc0-d39b-45af-9dd7-e0343751055&title=&width=728.8" alt="image.png"></li>
+<li>前端页面展示<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721043189305-2c9ff9da-89a8-4ebb-bb0f-3e109d100794.png#averageHue=%23eccf93&clientId=u5a7c8ae9-3d60-4&from=paste&height=443&id=u60bd761a&originHeight=554&originWidth=1420&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=18764&status=done&style=none&taskId=u6986e40c-127d-428c-aff6-b5ec43945ea&title=&width=1136" alt="image.png"></li>
+<li>编写后端文件<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721043359854-09569634-551e-4720-b985-fd9aa8dfbed8.png#averageHue=%2321201f&clientId=u5a7c8ae9-3d60-4&from=paste&height=709&id=u00185d0a&originHeight=886&originWidth=1335&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=183968&status=done&style=none&taskId=udabc5463-2d90-4813-ae7f-e08173dd2a9&title=&width=1068" alt="image.png"></li>
+</ol>
+<h1 id="3-制作文章预览页面"><a href="#3-制作文章预览页面" class="headerlink" title="3.制作文章预览页面"></a>3.制作文章预览页面</h1><ol>
+<li>在element选择表格样式<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721043605746-de5fc1c4-4e78-483b-bb1d-0e4fecdc82b2.png#averageHue=%23fbfbfb&clientId=u5a7c8ae9-3d60-4&from=paste&height=627&id=u297479a6&originHeight=784&originWidth=1046&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=59181&status=done&style=none&taskId=u2c8f448c-c484-4ae4-b651-4ad3019339a&title=&width=836.8" alt="image.png"></li>
+<li>修改样式</li>
+</ol>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+        &lt;el-table :data=&quot;tableData&quot; border style=&quot;width: 100%&quot;&gt;
+            &lt;el-table-column fixed prop=&quot;id&quot; label=&quot;ID&quot; width=&quot;150&quot;&gt;
+            &lt;/el-table-column&gt;
+            &lt;el-table-column prop=&quot;title&quot; label=&quot;标题&quot; width=&quot;120&quot;&gt;
+            &lt;/el-table-column&gt;
+            &lt;el-table-column prop=&quot;author&quot; label=&quot;作者&quot; width=&quot;120&quot;&gt;
+            &lt;/el-table-column&gt;
+            &lt;el-table-column prop=&quot;content&quot; label=&quot;内容&quot; width=&quot;120&quot;&gt;
+            &lt;/el-table-column&gt;
+            &lt;el-table-column prop=&quot;time&quot; label=&quot;日期&quot; width=&quot;300&quot;&gt;
+            &lt;/el-table-column&gt;
+            &lt;el-table-column fixed=&quot;right&quot; label=&quot;操作&quot; width=&quot;100&quot;&gt;
+                &lt;template slot-scope=&quot;scope&quot;&gt;
+                    &lt;el-button @click=&quot;handleClick(scope.row)&quot; type=&quot;text&quot; size=&quot;small&quot;&gt;查看&lt;/el-button&gt;
+                    &lt;el-button type=&quot;text&quot; size=&quot;small&quot;&gt;编辑&lt;/el-button&gt;
+                &lt;/template&gt;
+            &lt;/el-table-column&gt;
+        &lt;/el-table&gt;
+    &lt;/div&gt;
+</code></pre>
 <ol start="3">
-<li>提前注册好一个github账号</li>
-<li>挂好代理</li>
+<li>编写前端vue框<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721044865198-afde9741-462f-494c-b11a-4ebaea5e38e6.png#averageHue=%231f1f1f&clientId=u5a7c8ae9-3d60-4&from=paste&height=494&id=uefeeee66&originHeight=617&originWidth=1037&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=60347&status=done&style=none&taskId=u82ad89f9-06da-48f3-8535-c9784a14e69&title=&width=829.6" alt="image.png"></li>
+<li>编写后端程序<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721045089191-a1fabf7d-8121-45c7-819f-c25d62797317.png#averageHue=%2321201f&clientId=u5a7c8ae9-3d60-4&from=paste&height=677&id=uc690ad4e&originHeight=846&originWidth=1310&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=128239&status=done&style=none&taskId=ub8c0cb8c-7927-4ef5-b1cb-f36633def6c&title=&width=1048" alt="image.png"></li>
+<li>效果展示<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721045154967-070e6f28-bef5-4df6-a4ef-a0e2985c3663.png#averageHue=%23e7c496&clientId=u5a7c8ae9-3d60-4&from=paste&height=704&id=u1fcd2ce8&originHeight=880&originWidth=1856&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=65325&status=done&style=none&taskId=uc0334836-b1b3-4b0e-a177-f9ea42f0111&title=&width=1484.8" alt="image.png"></li>
 </ol>
-<h2 id="1-2操作步骤"><a href="#1-2操作步骤" class="headerlink" title="1.2操作步骤"></a>1.2操作步骤</h2><ol>
-<li>在本地找个目录放博客源文件，路径不要有中文</li>
-<li>在选定的目录中，右键<code>Git Bash Here</code></li>
-<li>使用npm命令安装Hexo，输入：</li>
-</ol>
-<p>npm install -g hexo-cli                     &#x2F;&#x2F;安装hexo<br>hexo init blog                                   &#x2F;&#x2F;初始化一个名为blog的项目<br>cd blog                                             &#x2F;&#x2F;进入blog<br>hexo g                                              &#x2F;&#x2F;编译构建<br>构建好的效果<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720613295114-d21dc033-fa3a-4d08-9fe6-28909e49bc6e.png#averageHue=%23fbfbfa&clientId=u54d68d13-b09c-4&from=paste&height=400&id=u837dca42&originHeight=500&originWidth=871&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=48080&status=done&style=none&taskId=u5ae4166a-f555-4390-a543-83261c11b45&title=&width=696.8" alt="image.png"><br>4.在blog目录下再次右键<code>Git Bash Here</code>输入以下指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site                    //博客新建一个文章</span><br><span class="line">hexo g                                   //构建</span><br><span class="line">hexo s                                   //启动服务</span><br><span class="line">之后就可以访问127.0.0.1:4000访问blog了</span><br></pre></td></tr></table></figure>
-<p>5.配置ssh<br>在电脑C盘个人用户目录下查看是否有.ssh文件夹<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720613802196-4a3e5eb5-765c-4de6-bbd4-a792028716ac.png#averageHue=%23fcfbf9&clientId=u54d68d13-b09c-4&from=paste&height=423&id=ud096763a&originHeight=529&originWidth=925&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=52236&status=done&style=none&taskId=u9f77d603-ae50-426e-9d1c-b3c2bb5054b&title=&width=740" alt="image.png"><br>如果没有则表示你是第一次使用git<br>在blog目录右键<code>Git Bash Here</code>输入ssh-keygen -t rsa -C “邮件地址”(github邮件地址)<br>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614023065-1aa4d258-16dc-491e-984f-d572fbd1adbe.png#averageHue=%23f8f8f7&clientId=u54d68d13-b09c-4&from=paste&height=224&id=u88153e4b&originHeight=280&originWidth=1424&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=23614&status=done&style=none&taskId=u64e0a5db-bf32-4ecb-9acc-deaa0707ecc&title=&width=1139.2" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614088892-5d21b5bd-5d00-4902-b4bd-19a30eb86e83.png#averageHue=%23fefefe&clientId=u54d68d13-b09c-4&from=paste&height=734&id=ued828e3e&originHeight=917&originWidth=387&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=39886&status=done&style=none&taskId=u662153c3-15bc-4c72-a0dd-85e029d99b5&title=&width=309.6" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614117846-cad786cd-0c1b-4757-b865-ddfbe0213634.png#averageHue=%23fefefd&clientId=u54d68d13-b09c-4&from=paste&height=562&id=u24a30deb&originHeight=702&originWidth=1668&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=88057&status=done&style=none&taskId=ub410b7c4-2587-49d2-a659-aaafc91532c&title=&width=1334.4" alt="image.png"><br>key填写C:\Users\Administrator.ssh\id_rsa.pub中的内容<br>尝试ssh连接,测试是否成功<br>ssh -T <a href="mailto:git@github.com">git@github.com</a> # 注意邮箱地址不用改<br>如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个，就算成功：<br>在blog目录右键<code>Git Bash Here</code><br>npm install hexo-deployer-git –save<br>git config –global user.name “bulaize2023”&#x2F;&#x2F; 你的github用户名，非昵称<br>git config –global user.email  “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“&#x2F;&#x2F; 填写你的github注册邮箱<br>6.上传代码<br>在GitHub里创建仓库<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614633402-1dd51011-a7ce-4499-af53-f8e4872847eb.png#averageHue=%23fefefe&clientId=u54d68d13-b09c-4&from=paste&height=597&id=u3121bda5&originHeight=746&originWidth=386&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=36179&status=done&style=none&taskId=u4c81ed1e-25f4-4053-a3b3-8bdb1e88247&title=&width=308.8" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614678477-deac3d92-f616-4807-88c2-7409b9abb8b3.png#averageHue=%23fefdfd&clientId=u54d68d13-b09c-4&from=paste&height=489&id=u9731cdeb&originHeight=611&originWidth=1672&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=56065&status=done&style=none&taskId=u181e54fa-7bd9-4930-9162-58a29871a69&title=&width=1337.6" alt="image.png"><br>在github上新建一个存储库，命名为<code>github的用户名.github.io</code><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614739197-02503ab7-e6f8-472b-9aad-a8970ffba168.png#averageHue=%23fefdfb&clientId=u54d68d13-b09c-4&from=paste&height=191&id=u147a38fe&originHeight=239&originWidth=630&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=25865&status=done&style=none&taskId=u8fbafc0d-ebf2-4032-81ae-5a49ce2aaaa&title=&width=504" alt="image.png"><br>编辑_config.yml文件，在最后改成这样</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:bulaize2023/bulaize2023.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-<p>hexo g 生成<br>hexo d 上传<br>在创建的存储库的设置中-pages-如图设置<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1720614969741-2bd35151-8588-42a0-aec8-bd757aadd03e.png#averageHue=%23e4c193&clientId=u54d68d13-b09c-4&from=paste&height=655&id=ubca5f5fc&originHeight=819&originWidth=1611&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=109505&status=done&style=none&taskId=ua2d9ea52-f836-4136-88bf-1ae5f1e1cda&title=&width=1288.8" alt="image.png"></p>
-<h2 id="1-3hexo命令介绍"><a href="#1-3hexo命令介绍" class="headerlink" title="1.3hexo命令介绍"></a>1.3hexo命令介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
-<h2 id="1-4hexo目录结构"><a href="#1-4hexo目录结构" class="headerlink" title="1.4hexo目录结构"></a>1.4hexo目录结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-- .deploy      #hexo deploy生成的文件</span><br><span class="line">+-- node_modules  #npm组件</span><br><span class="line">+-- public        #生成的静态网页文件</span><br><span class="line">+--scaffolds      #模板</span><br><span class="line">+-- source        #博客正文和其他源文件</span><br><span class="line">|  +-- _posts    #我们自己写的文章以md结尾</span><br><span class="line">+-- themes        #主题</span><br><span class="line">+-- _config.yml  #全局配置文件</span><br><span class="line">-- package.json  #定义了hexo所需要的各种模块</span><br></pre></td></tr></table></figure>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
