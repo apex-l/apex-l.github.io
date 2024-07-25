@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>信息收集 | bulaize2023</title>
-  <meta name="keywords" content=" 信息收集 ">
-  <meta name="description" content="信息收集 | bulaize2023">
+  <title>SQL注入基础3 | bulaize2023</title>
+  <meta name="keywords" content=" SQL注入 ">
+  <meta name="description" content="SQL注入基础3 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1.宽字节注入1.1什么是宽字节注入宽字节是相对于ascII这样单字节而言的；像 GB2312、GBK、GB18030、BIG5、Shift_JIS 等这些都是常说的宽字节，实际上只有两字节。GBK 是一种多字符的编码，通常来说，一个 gbk 编码汉字，占用2个字节。一个 utf-8 编码的汉字，占用3个字节。 转义函数：为了过滤用户输入的一些数据，对特殊的字符加上反斜杠“\”进行转义； 宽字节注">
 <meta property="og:type" content="article">
@@ -722,9 +722,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-2.信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-5.SQL注入3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">信息收集</h1>
+        <h1 class="article-title">SQL注入基础3</h1>
     
     <div class="article-meta">
         
@@ -742,19 +742,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">信息收集</a>
+            <a class="color1">SQL注入</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-22 21:08:25'>2024-07-22 20:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-25 20:32:30'>2024-07-24 20:50</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:880</span>
+        <span>字数:796</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -773,7 +773,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AD%90%E5%9F%9F%E5%90%8D"><span class="toc-text">1.子域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%8E%B7%E5%BE%97%E5%AD%90%E5%9F%9F%E5%90%8D"><span class="toc-text">2.获得子域名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E5%AD%90%E5%9F%9F%E5%90%8D%E7%88%86%E7%A0%B4"><span class="toc-text">2.1子域名爆破</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1Layer%E5%AD%90%E5%9F%9F%E5%90%8D%E6%8C%96%E6%8E%98%E6%9C%BA"><span class="toc-text">2.1.1Layer子域名挖掘机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2subfinder"><span class="toc-text">2.1.2subfinder</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E4%BD%BF%E7%94%A8%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="toc-text">2.2使用空间搜索引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1%E9%B9%B0%E5%9B%BE"><span class="toc-text">2.2.1鹰图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2%E9%92%9F%E9%A6%97%E4%B9%8B%E7%9C%BC"><span class="toc-text">2.2.2钟馗之眼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3fofa"><span class="toc-text">2.2.3fofa</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4%E5%BE%AE%E6%AD%A5"><span class="toc-text">2.2.4微步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5%E5%85%B6%E4%BB%96%E7%9A%84%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="toc-text">2.2.5其他的空间搜索引擎</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93"><span class="toc-text">3.总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5"><span class="toc-text">1.宽字节注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5"><span class="toc-text">1.1什么是宽字节注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-text">1.2宽字节注入原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3%E5%AE%9E%E6%88%98-sqli-labs%E7%AC%AC32%E5%85%B3"><span class="toc-text">1.3实战:sqli-labs第32关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5"><span class="toc-text">2.二次注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5"><span class="toc-text">2.1什么是二次注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-text">2.2二次注入的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E5%AE%9E%E6%88%98%EF%BC%9Asqli-labs%E7%AC%AC24%E5%85%B3"><span class="toc-text">2.3实战：sqli-labs第24关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-waf%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="toc-text">3.waf绕过方法</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -789,85 +789,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-子域名"><a href="#1-子域名" class="headerlink" title="1.子域名"></a>1.子域名</h1><p>域名可以划分为各个子域，子域还可以继续划分为子域的子域，这样就形成了顶级域、主域名、子域名等。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721644819674-c3338893-ccfe-4b0a-b7d0-e82f7046c3ee.png#averageHue=%23fcfcfc&clientId=u93e5fd99-0d9d-4&from=paste&height=311&id=u71eb7153&originHeight=389&originWidth=819&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=112991&status=done&style=none&taskId=u0e6e0f7a-f296-4c60-9333-7d43be0012f&title=&width=655.2" alt="image.png"><br>举例：</p>
-<ul>
-<li>“.com”是顶级域名（一级域名）；</li>
-<li>“aliyun.com”是主域名（二级域名）；</li>
-<li>“example.aliyun.com”是子域名（三级域名）；</li>
-<li>“<a href="http://www.example.aliyun.com”是子域名的子域(四级域名)./">www.example.aliyun.com”是子域名的子域（四级域名）。</a></li>
-</ul>
-<h1 id="2-获得子域名"><a href="#2-获得子域名" class="headerlink" title="2.获得子域名"></a>2.获得子域名</h1><h2 id="2-1子域名爆破"><a href="#2-1子域名爆破" class="headerlink" title="2.1子域名爆破"></a>2.1子域名爆破</h2><h3 id="2-1-1Layer子域名挖掘机"><a href="#2-1-1Layer子域名挖掘机" class="headerlink" title="2.1.1Layer子域名挖掘机"></a>2.1.1Layer子域名挖掘机</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721645016472-e8cd6dd9-e6c8-4dec-b7c9-fea06db0ba56.png#averageHue=%23faf9f8&clientId=u93e5fd99-0d9d-4&from=paste&height=218&id=u2f569d3a&originHeight=272&originWidth=899&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=31085&status=done&style=none&taskId=u2ce258c7-09af-460d-ad9c-4a3b031694b&title=&width=719.2" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721645305126-15a0b519-f0a4-4e83-a12d-ac1605fd7164.png#averageHue=%23f8f8f8&clientId=ud7ca94df-c08a-4&from=paste&height=490&id=ubfe5ad8d&originHeight=612&originWidth=1920&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=83638&status=done&style=none&taskId=u2b197206-591a-439a-8927-035c38d9d86&title=&width=1536" alt="image.png"></p>
-<h3 id="2-1-2subfinder"><a href="#2-1-2subfinder" class="headerlink" title="2.1.2subfinder"></a>2.1.2subfinder</h3><p>Subfinder 是一个通过使用被动在线源发现网站子域的子域发现工具<br>需要安装go环境<br>设置go代理</p>
-<pre><code>go env -w GOPROXY=https://goproxy.cn,direct
-</code></pre>
-<p>安装subfinder</p>
-<pre><code>go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
-</code></pre>
-<p>安装好后 go&#x2F;bin目录下 出现 subfinder.exe 程序<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721645835783-d8f89449-4662-4772-8cde-44799d9a420c.png#averageHue=%23fcfbfb&clientId=ud7ca94df-c08a-4&from=paste&height=133&id=uc2692eb1&originHeight=166&originWidth=1152&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=31691&status=done&style=none&taskId=ud4d8affe-9347-48cd-b94c-ead899e2537&title=&width=921.6" alt="image.png"></p>
-<pre><code>用法：
-  D:\desk\subfinder.exe [选项]
-
-选项：
-输入：
-   -d, -domain string[]  要查找子域的域名
-   -dL, -list string     包含要进行子域发现的域名列表的文件
-
-来源：
-   -s, -sources string[]           用于发现的特定来源（-s crtsh,github）。使用 -ls 来显示所有可用来源。
-   -recursive                      仅使用可以递归处理子域的来源（例如 subdomain.domain.tld vs domain.tld）
-   -all                            使用所有来源进行枚举（速度较慢）
-   -es, -exclude-sources string[]  从枚举中排除的来源（-es alienvault,zoomeyeapi）
-
-过滤：
-   -m, -match string[]   要匹配的子域或子域列表（文件或逗号分隔）
-   -f, -filter string[]   要过滤的子域或子域列表（文件或逗号分隔）
-
-速率限制：
-   -rl, -rate-limit int      每秒发送的最大http请求数（全局）
-   -rls, -rate-limits value  以键=值格式为提供程序指定每秒发送的最大http请求数（-rls hackertarget=10/m）（默认值[&quot;github=30/m&quot;, &quot;fullhunt=60/m&quot;, &quot;robtex=18446744073709551615/ms&quot;, &quot;securitytrails=1/s&quot;, &quot;shodan=1/s&quot;, &quot;virustotal=4/m&quot;, &quot;hackertarget=2/s&quot;, &quot;waybackarchive=15/m&quot;, &quot;whoisxmlapi=50/s&quot;, &quot;securitytrails=2/s&quot;, &quot;sitedossier=8/m&quot;, &quot;netlas=1/s&quot;, &quot;github=83/m&quot;]）
-   -t int                    用于解析的并发goroutines数（仅限 -active）（默认值 10）
-
-更新：
-   -up, -update                 将 subfinder 更新到最新版本
-   -duc, -disable-update-check  禁用 subfinder 的自动更新检查
-
-输出：
-   -o, -output string       要将输出写入的文件
-   -oJ, -json               以 JSONL(ines) 格式编写输出
-   -oD, -output-dir string  要写入输出的目录（仅限 -dL）
-   -cs, -collect-sources    在输出中包含所有来源（仅限 -json）
-   -oI, -ip                 在输出中包含主机 IP（仅限 -active）
-
-配置：
-   -config string                标志配置文件（默认为 &quot;C:\\Users\\Administrator\\AppData\\Roaming\\subfinder\\config.yaml&quot;）
-   -pc, -provider-config string  提供程序配置文件（默认为 &quot;C:\\Users\\Administrator\\AppData\\Roaming\\subfinder\\provider-config.yaml&quot;）
-   -r string[]                   要使用的解析器的逗号分隔列表
-   -rL, -rlist string            包含要使用的解析器列表的文件
-   -nW, -active                  仅显示活动的子域
-   -proxy string                 用于 subfinder 的 http 代理
-   -ei, -exclude-ip              从域名列表中排除 IP
-
-调试：
-   -silent             仅在输出中显示子域
-   -version            显示 subfinder 版本
-   -v                  显示详细输出
-   -nc, -no-color      在输出中禁用颜色
-   -ls, -list-sources  列出所有可用来源
-   -stats              报告来源统计信息
-
-优化：
-   -timeout int   超时前等待的秒数（默认值 30）
-   -max-time int  等待枚举结果的分钟数（默认值 10）
-</code></pre>
-<h2 id="2-2使用空间搜索引擎"><a href="#2-2使用空间搜索引擎" class="headerlink" title="2.2使用空间搜索引擎"></a>2.2使用空间搜索引擎</h2><h3 id="2-2-1鹰图"><a href="#2-2-1鹰图" class="headerlink" title="2.2.1鹰图"></a>2.2.1鹰图</h3><p><a href="https://hunter.qianxin.com/">https://hunter.qianxin.com/</a><br>domain.suffix&#x3D;”csuft.edu.cn”搜索主域为”csuft.edu.cn”的网站<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721646173629-cd231045-7975-4608-803e-6cc10e6f23f9.png#averageHue=%23e8c28d&clientId=ud7ca94df-c08a-4&from=paste&height=718&id=u37bf1fc0&originHeight=898&originWidth=1812&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=192482&status=done&style=none&taskId=u3fd86eb9-723c-4665-ad0d-60025f47e3d&title=&width=1449.6" alt="image.png"></p>
-<h3 id="2-2-2钟馗之眼"><a href="#2-2-2钟馗之眼" class="headerlink" title="2.2.2钟馗之眼"></a>2.2.2钟馗之眼</h3><p><a href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721646354652-e5a13df2-cc17-4a0a-ab1c-d75074eb2752.png#averageHue=%23f7f6ca&clientId=ud7ca94df-c08a-4&from=paste&height=776&id=uf6bf44ed&originHeight=970&originWidth=1676&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=145120&status=done&style=none&taskId=u38f6c9d6-f1e0-4fbc-8b27-a2263d1d611&title=&width=1340.8" alt="image.png"></h3><h3 id="2-2-3fofa"><a href="#2-2-3fofa" class="headerlink" title="2.2.3fofa"></a>2.2.3fofa</h3><p><a href="https://fofa.info/toLogin">https://fofa.info/toLogin</a><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721646437817-4eb8dc9d-f1c4-411f-aed5-c1018cc9db51.png#averageHue=%23071527&clientId=ud7ca94df-c08a-4&from=paste&height=764&id=u637fdb2c&originHeight=955&originWidth=1728&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=158875&status=done&style=none&taskId=u57e6d52e-cd43-4cfa-8744-7e90c508f39&title=&width=1382.4" alt="image.png"></p>
-<h3 id="2-2-4微步"><a href="#2-2-4微步" class="headerlink" title="2.2.4微步"></a>2.2.4微步</h3><p><a href="https://x.threatbook.com/">https://x.threatbook.com/</a><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721646584455-3547f3ed-293a-47c0-ace2-83a7457f304a.png#averageHue=%23f2f5c3&clientId=ud7ca94df-c08a-4&from=paste&height=700&id=ubfc40939&originHeight=875&originWidth=1622&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=82534&status=done&style=none&taskId=ue9e20bda-e9a2-4fbe-b944-049c2646036&title=&width=1297.6" alt="image.png"></p>
-<h3 id="2-2-5其他的空间搜索引擎"><a href="#2-2-5其他的空间搜索引擎" class="headerlink" title="2.2.5其他的空间搜索引擎"></a>2.2.5其他的空间搜索引擎</h3><ol>
-<li><a href="https://quake.360.net/quake/#/index">https://quake.360.net/quake/#/index</a></li>
-<li><a href="https://0.zone/">https://0.zone/</a></li>
+        <h2 id="1-宽字节注入"><a href="#1-宽字节注入" class="headerlink" title="1.宽字节注入"></a>1.宽字节注入</h2><h2 id="1-1什么是宽字节注入"><a href="#1-1什么是宽字节注入" class="headerlink" title="1.1什么是宽字节注入"></a>1.1什么是宽字节注入</h2><p>宽字节是相对于ascII这样单字节而言的；像 GB2312、GBK、GB18030、BIG5、Shift_JIS 等这些都是常说的宽字节，实际上只有两字节。GBK 是一种多字符的编码，通常来说，一个 gbk 编码汉字，占用2个字节。一个 utf-8 编码的汉字，占用3个字节。</p>
+<p>转义函数：为了过滤用户输入的一些数据，对特殊的字符加上反斜杠“\”进行转义；</p>
+<p>宽字节注入指的是 mysql 数据库在使用宽字节（GBK）编码时，会认为两个字符是一个汉字（前一个ascii码要大于128（比如%df），才到汉字的范围），而且当我们输入单引号时，mysql会调用转义函数，将单引号变为’，其中\的十六进制是%5c,mysql的GBK编码，会认为%df%5c是一个宽字节，也就是’運’，从而使单引号闭合（逃逸），进行注入攻击。</p>
+<h2 id="1-2宽字节注入原理"><a href="#1-2宽字节注入原理" class="headerlink" title="1.2宽字节注入原理"></a>1.2宽字节注入原理</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721877477608-5f133862-242a-4e3c-94dc-6ed5f95545d5.png#averageHue=%23ebce62&clientId=u0855a686-987b-4&from=paste&height=520&id=u5fb4b9de&originHeight=650&originWidth=1196&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=276960&status=done&style=none&taskId=u9172fb7a-2bb5-4f86-ae46-8614954ba8a&title=&width=956.8" alt="image.png"></p>
+<h2 id="1-3实战-sqli-labs第32关"><a href="#1-3实战-sqli-labs第32关" class="headerlink" title="1.3实战:sqli-labs第32关"></a>1.3实战:sqli-labs第32关</h2><ol>
+<li>无论我们在id&#x3D;1后面加任意字符都不会显示报错，说明字符可能被转义了<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879081362-90cc6bc8-189d-4db6-970c-98cb80b35d4c.png#averageHue=%23929082&clientId=u0855a686-987b-4&from=paste&height=597&id=uac45e2f9&originHeight=746&originWidth=1316&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=333177&status=done&style=none&taskId=ua5734c87-ee49-4fc6-8059-8e0349a300e&title=&width=1052.8" alt="image.png"></li>
+<li>查看源代码，发现了gbk编码，说明存在宽字节注入<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879327235-e2d11826-e1d8-4c6a-b676-4bcd45767c35.png#averageHue=%2321201f&clientId=u0855a686-987b-4&from=paste&height=718&id=ua44c0922&originHeight=897&originWidth=1116&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=86143&status=done&style=none&taskId=udf1b0324-7f67-4df1-a4a9-d3ad8a41481&title=&width=892.8" alt="image.png"></li>
+<li>?id&#x3D;1%df%27在单引号前面加上%df,结果发生报错<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879419376-dc646949-ffb2-4540-850d-d7b83a997e0b.png#averageHue=%23050402&clientId=u0855a686-987b-4&from=paste&height=697&id=u7394b236&originHeight=871&originWidth=1876&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=351333&status=done&style=none&taskId=uc060213a-8898-4c48-ae9f-71b1e7b21fa&title=&width=1500.8" alt="image.png"></li>
+<li>在后面加上–+注释符并使用order by判断字段数<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879518337-d8a1abf3-cd0b-4bae-a920-157bba56ed0c.png#averageHue=%23919081&clientId=u0855a686-987b-4&from=paste&height=529&id=u92e09666&originHeight=661&originWidth=1266&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=281287&status=done&style=none&taskId=u1adb620e-a09c-4758-845b-de95d7fec73&title=&width=1012.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879536036-0666d48d-5d7f-41d2-be4b-cd02abb13ec9.png#averageHue=%23a3a065&clientId=u0855a686-987b-4&from=paste&height=679&id=ua0882b4b&originHeight=849&originWidth=1389&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=326024&status=done&style=none&taskId=u95b65c51-bc9b-401a-b832-3b511e328bf&title=&width=1111.2" alt="image.png"></li>
+<li>字段数为3，使用union联合查询查看当前数据库<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879614749-dd73081e-e80b-474c-bb2d-fd64ab045cd4.png#averageHue=%238c8d7b&clientId=u0855a686-987b-4&from=paste&height=569&id=u0ae8d793&originHeight=711&originWidth=1416&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=314458&status=done&style=none&taskId=u761a8762-7936-4c0d-a6af-f60ab376324&title=&width=1132.8" alt="image.png"></li>
 </ol>
-<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721481780488-ee2ba759-095c-41e8-b8b1-81ae25c56649.png#averageHue=%2338414a&clientId=ub8eca35c-3738-4&from=paste&height=574&id=u423fdc09&originHeight=717&originWidth=545&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=74289&status=done&style=none&taskId=u7fbcafcd-d639-4527-a4f7-2a267f77799&title=&width=436" alt="image.png"></p>
+<h1 id="2-二次注入"><a href="#2-二次注入" class="headerlink" title="2.二次注入"></a>2.二次注入</h1><h2 id="2-1什么是二次注入"><a href="#2-1什么是二次注入" class="headerlink" title="2.1什么是二次注入"></a>2.1什么是二次注入</h2><p>二次注入是指已存储（数据库、文件）的用户输入被读取后再次进入到 SQL 查询语句中导致的注入。<br>二次注入是sql注入的一种，但是比普通sql注入利用更加困难，利用门槛更高。普通注入数据直接进入到 SQL 查询中，而二次注入则是输入数据经处理后存储，取出后，再次进入到 SQL 查询。</p>
+<h2 id="2-2二次注入的原理"><a href="#2-2二次注入的原理" class="headerlink" title="2.2二次注入的原理"></a>2.2二次注入的原理</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887736182-84285a06-37e3-4b84-9582-61579fc12aab.png#averageHue=%23f6f6f6&clientId=u0855a686-987b-4&from=paste&height=489&id=u41668fe9&originHeight=611&originWidth=1039&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=111920&status=done&style=none&taskId=u5ee8c497-d224-44c9-8974-2c3deefb538&title=&width=831.2" alt="image.png"></p>
+<h2 id="2-3实战：sqli-labs第24关"><a href="#2-3实战：sqli-labs第24关" class="headerlink" title="2.3实战：sqli-labs第24关"></a>2.3实战：sqli-labs第24关</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887825515-49b4335f-2493-43a1-aa76-4758ff3fa83d.png#averageHue=%23191917&clientId=u0855a686-987b-4&from=paste&height=523&id=u12703d9d&originHeight=654&originWidth=1269&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=141581&status=done&style=none&taskId=ub02c81b3-f319-4b04-a652-0b2440809d7&title=&width=1015.2" alt="image.png"></p>
+<ol>
+<li>输入admin’#和123456，显示登录失败<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887890848-dd7029b0-90b0-4c97-bb96-7a50fec61133.png#averageHue=%23985c52&clientId=u0855a686-987b-4&from=paste&height=604&id=uf0ac1f3b&originHeight=755&originWidth=1590&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=299623&status=done&style=none&taskId=u7913d302-4d27-498b-9b0d-bae1301b919&title=&width=1272" alt="image.png"></li>
+<li>点击创建新用户<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887933584-9f94ea0e-4931-46c3-b7eb-a1ed0f320a86.png#averageHue=%23181717&clientId=u0855a686-987b-4&from=paste&height=430&id=ub8aa5a26&originHeight=537&originWidth=1335&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=121821&status=done&style=none&taskId=u97be37f3-b5f3-412c-87f8-4b29f11b208&title=&width=1068" alt="image.png"></li>
+<li>用户名:admin’#,密码:123<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888006467-8e5aef78-e069-42db-8f5e-89957fc414f1.png#averageHue=%231c1c1a&clientId=u0855a686-987b-4&from=paste&height=441&id=u6283db32&originHeight=551&originWidth=942&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=153009&status=done&style=none&taskId=u19c0db4f-0eaf-4ff8-b50c-7f2e50b7f9a&title=&width=753.6" alt="image.png"></li>
+<li>在数据库查看admin和admin’#的密码<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888581926-33929aaa-87b6-439e-b903-e995b7327794.png#averageHue=%23161311&clientId=u0855a686-987b-4&from=paste&height=361&id=ud24273b5&originHeight=451&originWidth=349&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=21575&status=done&style=none&taskId=u434c8bed-ff41-4ed4-988f-623988f0b82&title=&width=279.2" alt="image.png"></li>
+<li>使用admin’#和密码123登录并将密码修改成123456<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888657975-c09e1cff-de83-4431-8d9d-365f7e84cd30.png#averageHue=%230a0a07&clientId=u0855a686-987b-4&from=paste&height=563&id=u0ca60bae&originHeight=704&originWidth=1305&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=251737&status=done&style=none&taskId=uf0de8625-30d1-4478-9a79-5e4ceb99207&title=&width=1044" alt="image.png"></li>
+<li>查看数据库，此时admin原来的密码变成了123456<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888805827-0c21cf98-1717-438f-ab56-1f76108a1d0f.png#averageHue=%23161311&clientId=u0855a686-987b-4&from=paste&height=345&id=u6f843ef5&originHeight=431&originWidth=350&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=20102&status=done&style=none&taskId=u770916c2-197d-4b4f-aa4c-70370793282&title=&width=280" alt="image.png"></li>
+<li>Username直接从数据库中取出，没有经过转义处理。在更新用户密码的时候其实执行了下面的命令：</li>
+</ol>
+<p>“UPDATE users SET PASSWORD&#x3D;‘123456’ where username&#x3D;‘admin’#’ and password&#x3D;’$curr_pass’”。<br>因为我们将问题数据存储到了数据库，而程序再取数据库中的数据的时候没有进行二次判断便直接带入到代码中（#号将后面的单引号注释掉了），从而造成了二次注入。</p>
+<h1 id="3-waf绕过方法"><a href="#3-waf绕过方法" class="headerlink" title="3.waf绕过方法"></a>3.waf绕过方法</h1><p><a href="https://cloud.tencent.com/developer/article/1849607">https://cloud.tencent.com/developer/article/1849607</a><br><a href="https://blog.51cto.com/u_15072903/4074643">https://blog.51cto.com/u_15072903&#x2F;4074643</a></p>
+<p><a href="http://localhost/Less-1/?id=-1%27%20union/*//*//*//*/select%201,2,3--+">http://localhost/Less-1/?id=-1'%20union/<em>&#x2F;&#x2F;</em>&#x2F;&#x2F;<em>&#x2F;&#x2F;</em>&#x2F;select%201,2,3–+</a></p>
+<p><a href="http://192.168.1.133/sqli/Less-1/?id=0">?id&#x3D;0</a> ‘union&#x2F;<em>&#x2F;&#x2F;</em>&#x2F;&#x2F;<em>&#x2F;&#x2F;</em>&#x2F;select 1,group_concat(SCHEMA_NAME),3 from&#x2F;<em>!–+&#x2F;</em>%0ainformation_schema.&#x2F;<em>!schemata</em>&#x2F;– -<br>或者<br><a href="http://192.168.1.133/sqli/Less-1/?id=0">?id&#x3D;0</a> ‘union&#x2F;<em>&#x2F;&#x2F;</em>&#x2F;&#x2F;<em>&#x2F;&#x2F;</em>&#x2F;select 1,group_concat(SCHEMA_NAME),3 from &#x2F;<em>!–+</em>&#x2F;&#x2F;<em>%0Ainformation_schema.schemata</em>&#x2F;– -<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721891230556-707dd933-6998-42ed-8d52-0f2ca89a437c.png#averageHue=%232d2c2c&clientId=u5332a0c0-8ff7-4&from=paste&height=430&id=uf22b274c&originHeight=537&originWidth=1455&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=164876&status=done&style=none&taskId=u0fd61a02-7edb-4620-91c7-51e2b77797a&title=&width=1164" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
