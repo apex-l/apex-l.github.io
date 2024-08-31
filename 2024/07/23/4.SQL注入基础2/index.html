@@ -7,35 +7,21 @@
   <meta name="keywords" content=" SQL注入 ">
   <meta name="description" content="SQL注入基础2 | bulaize2023">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1.宽字节注入1.1什么是宽字节注入宽字节是相对于ascII这样单字节而言的；像 GB2312、GBK、GB18030、BIG5、Shift_JIS 等这些都是常说的宽字节，实际上只有两字节。GBK 是一种多字符的编码，通常来说，一个 gbk 编码汉字，占用2个字节。一个 utf-8 编码的汉字，占用3个字节。 转义函数：为了过滤用户输入的一些数据，对特殊的字符加上反斜杠“\”进行转义； 宽字节注">
+<meta name="description" content="User-Agent：标识浏览器的详细信息，包括名称、版本、操作系统等。 Accept：指定客户端接受的数据类型，可以是文本、HTML、XML、JSON 等等。 Accept-Encoding：指定客户端可以接受的压缩编码类型，如 gzip、deflate 等。 Accept-Language：指定客户端接受的语言类型和优先级。 Cache-Control：指定客户端的缓存策略，如 no-cac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL注入基础3">
-<meta property="og:url" content="http://example.com/2024/07/24/5.SQL%E6%B3%A8%E5%85%A53/index.html">
+<meta property="og:title" content="HTTP请求头和网页状态码">
+<meta property="og:url" content="http://example.com/2024/08/19/12.HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4/index.html">
 <meta property="og:site_name" content="bulaize2023">
-<meta property="og:description" content="1.宽字节注入1.1什么是宽字节注入宽字节是相对于ascII这样单字节而言的；像 GB2312、GBK、GB18030、BIG5、Shift_JIS 等这些都是常说的宽字节，实际上只有两字节。GBK 是一种多字符的编码，通常来说，一个 gbk 编码汉字，占用2个字节。一个 utf-8 编码的汉字，占用3个字节。 转义函数：为了过滤用户输入的一些数据，对特殊的字符加上反斜杠“\”进行转义； 宽字节注">
+<meta property="og:description" content="User-Agent：标识浏览器的详细信息，包括名称、版本、操作系统等。 Accept：指定客户端接受的数据类型，可以是文本、HTML、XML、JSON 等等。 Accept-Encoding：指定客户端可以接受的压缩编码类型，如 gzip、deflate 等。 Accept-Language：指定客户端接受的语言类型和优先级。 Cache-Control：指定客户端的缓存策略，如 no-cac">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721877477608-5f133862-242a-4e3c-94dc-6ed5f95545d5.png#averageHue=%23ebce62&clientId=u0855a686-987b-4&from=paste&height=520&id=u5fb4b9de&originHeight=650&originWidth=1196&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=276960&status=done&style=none&taskId=u9172fb7a-2bb5-4f86-ae46-8614954ba8a&title=&width=956.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879081362-90cc6bc8-189d-4db6-970c-98cb80b35d4c.png#averageHue=%23929082&clientId=u0855a686-987b-4&from=paste&height=597&id=uac45e2f9&originHeight=746&originWidth=1316&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=333177&status=done&style=none&taskId=ua5734c87-ee49-4fc6-8059-8e0349a300e&title=&width=1052.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879327235-e2d11826-e1d8-4c6a-b676-4bcd45767c35.png#averageHue=%2321201f&clientId=u0855a686-987b-4&from=paste&height=718&id=ua44c0922&originHeight=897&originWidth=1116&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=86143&status=done&style=none&taskId=udf1b0324-7f67-4df1-a4a9-d3ad8a41481&title=&width=892.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879419376-dc646949-ffb2-4540-850d-d7b83a997e0b.png#averageHue=%23050402&clientId=u0855a686-987b-4&from=paste&height=697&id=u7394b236&originHeight=871&originWidth=1876&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=351333&status=done&style=none&taskId=uc060213a-8898-4c48-ae9f-71b1e7b21fa&title=&width=1500.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879518337-d8a1abf3-cd0b-4bae-a920-157bba56ed0c.png#averageHue=%23919081&clientId=u0855a686-987b-4&from=paste&height=529&id=u92e09666&originHeight=661&originWidth=1266&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=281287&status=done&style=none&taskId=u1adb620e-a09c-4758-845b-de95d7fec73&title=&width=1012.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879536036-0666d48d-5d7f-41d2-be4b-cd02abb13ec9.png#averageHue=%23a3a065&clientId=u0855a686-987b-4&from=paste&height=679&id=ua0882b4b&originHeight=849&originWidth=1389&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=326024&status=done&style=none&taskId=u95b65c51-bc9b-401a-b832-3b511e328bf&title=&width=1111.2">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721879614749-dd73081e-e80b-474c-bb2d-fd64ab045cd4.png#averageHue=%238c8d7b&clientId=u0855a686-987b-4&from=paste&height=569&id=u0ae8d793&originHeight=711&originWidth=1416&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=314458&status=done&style=none&taskId=u761a8762-7936-4c0d-a6af-f60ab376324&title=&width=1132.8">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887736182-84285a06-37e3-4b84-9582-61579fc12aab.png#averageHue=%23f6f6f6&clientId=u0855a686-987b-4&from=paste&height=489&id=u41668fe9&originHeight=611&originWidth=1039&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=111920&status=done&style=none&taskId=u5ee8c497-d224-44c9-8974-2c3deefb538&title=&width=831.2">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887825515-49b4335f-2493-43a1-aa76-4758ff3fa83d.png#averageHue=%23191917&clientId=u0855a686-987b-4&from=paste&height=523&id=u12703d9d&originHeight=654&originWidth=1269&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=141581&status=done&style=none&taskId=ub02c81b3-f319-4b04-a652-0b2440809d7&title=&width=1015.2">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887890848-dd7029b0-90b0-4c97-bb96-7a50fec61133.png#averageHue=%23985c52&clientId=u0855a686-987b-4&from=paste&height=604&id=uf0ac1f3b&originHeight=755&originWidth=1590&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=299623&status=done&style=none&taskId=u7913d302-4d27-498b-9b0d-bae1301b919&title=&width=1272">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721887933584-9f94ea0e-4931-46c3-b7eb-a1ed0f320a86.png#averageHue=%23181717&clientId=u0855a686-987b-4&from=paste&height=430&id=ub8aa5a26&originHeight=537&originWidth=1335&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=121821&status=done&style=none&taskId=u97be37f3-b5f3-412c-87f8-4b29f11b208&title=&width=1068">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888006467-8e5aef78-e069-42db-8f5e-89957fc414f1.png#averageHue=%231c1c1a&clientId=u0855a686-987b-4&from=paste&height=441&id=u6283db32&originHeight=551&originWidth=942&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=153009&status=done&style=none&taskId=u19c0db4f-0eaf-4ff8-b50c-7f2e50b7f9a&title=&width=753.6">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888581926-33929aaa-87b6-439e-b903-e995b7327794.png#averageHue=%23161311&clientId=u0855a686-987b-4&from=paste&height=361&id=ud24273b5&originHeight=451&originWidth=349&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=21575&status=done&style=none&taskId=u434c8bed-ff41-4ed4-988f-623988f0b82&title=&width=279.2">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888657975-c09e1cff-de83-4431-8d9d-365f7e84cd30.png#averageHue=%230a0a07&clientId=u0855a686-987b-4&from=paste&height=563&id=u0ca60bae&originHeight=704&originWidth=1305&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=251737&status=done&style=none&taskId=uf0de8625-30d1-4478-9a79-5e4ceb99207&title=&width=1044">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721888805827-0c21cf98-1717-438f-ab56-1f76108a1d0f.png#averageHue=%23161311&clientId=u0855a686-987b-4&from=paste&height=345&id=u6f843ef5&originHeight=431&originWidth=350&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=20102&status=done&style=none&taskId=u770916c2-197d-4b4f-aa4c-70370793282&title=&width=280">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721891230556-707dd933-6998-42ed-8d52-0f2ca89a437c.png#averageHue=%232d2c2c&clientId=u5332a0c0-8ff7-4&from=paste&height=430&id=uf22b274c&originHeight=537&originWidth=1455&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=164876&status=done&style=none&taskId=u0fd61a02-7edb-4620-91c7-51e2b77797a&title=&width=1164">
-<meta property="article:published_time" content="2024-07-24T12:50:30.000Z">
-<meta property="article:modified_time" content="2024-07-25T12:32:30.597Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1724204786808-e0f2fcda-b0db-470d-ad2a-7be6e65309e2.png#averageHue=%23dde1de&clientId=uc378e660-d8a2-4&from=paste&height=339&id=u29f2bd92&originHeight=424&originWidth=717&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=224244&status=done&style=none&taskId=u0ec3399f-3191-4261-96f7-845cf4c7437&title=&width=573.6">
+<meta property="article:published_time" content="2024-08-19T10:30:30.000Z">
+<meta property="article:modified_time" content="2024-08-31T13:17:01.124Z">
 <meta property="article:author" content="bulaize2023">
-<meta property="article:tag" content="SQL注入">
+<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="状态码">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721877477608-5f133862-242a-4e3c-94dc-6ed5f95545d5.png#averageHue=%23ebce62&clientId=u0855a686-987b-4&from=paste&height=520&id=u5fb4b9de&originHeight=650&originWidth=1196&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=276960&status=done&style=none&taskId=u9172fb7a-2bb5-4f86-ae46-8614954ba8a&title=&width=956.8">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1724204786808-e0f2fcda-b0db-470d-ad2a-7be6e65309e2.png#averageHue=%23dde1de&clientId=uc378e660-d8a2-4&from=paste&height=339&id=u29f2bd92&originHeight=424&originWidth=717&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=224244&status=done&style=none&taskId=u0ec3399f-3191-4261-96f7-845cf4c7437&title=&width=573.6">
 
 
 <link rel="icon" href="/img/LBJ.jpg">
@@ -262,7 +248,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(24)</small>
+                <small>(28)</small>
             
         </div>
     </li>
@@ -289,7 +275,7 @@
         <div data-rel="第一阶段">
             
             第一阶段
-            <small>(11)</small>
+            <small>(12)</small>
         </div>
         
     </li>
@@ -304,7 +290,7 @@
         <div data-rel="第二阶段">
             
             第二阶段
-            <small>(6)</small>
+            <small>(7)</small>
         </div>
         
     </li>
@@ -333,8 +319,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="24">
-<input type="hidden" id="yelog_site_word_count" value="15.9k">
+<input type="hidden" id="yelog_site_posts_number" value="28">
+<input type="hidden" id="yelog_site_word_count" value="17k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -426,6 +412,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>状态码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>day02</a>
             </li>
         
@@ -447,6 +437,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>HTML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTTP</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -481,12 +475,38 @@
                 <i class="iconfont icon-tag"></i><a>vue</a>
             </li>
         
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WEB漏洞</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>XSS</a>
+            </li>
+        
     </div>
 
 </div>
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2024/08/31/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-08-31 20:43:38">2024/08/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/08/19/12.HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4/"
+           data-tag="HTTP,状态码"
+           data-author="" >
+            <span class="post-title" title="HTTP请求头和网页状态码">HTTP请求头和网页状态码</span>
+            <span class="post-date" title="2024-08-19 18:30:30">2024/08/19</span>
+        </a>
         
         
         <a  class="全部文章 第二阶段 "
@@ -540,6 +560,15 @@
            data-author="" >
             <span class="post-title" title="谷歌语法">谷歌语法</span>
             <span class="post-date" title="2024-07-22 19:50:30">2024/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/20/xss%E6%BC%8F%E6%B4%9E/"
+           data-tag="XSS,WEB漏洞"
+           data-author="" >
+            <span class="post-title" title="XSS漏洞">XSS漏洞</span>
+            <span class="post-date" title="2024-07-20 18:30:30">2024/07/20</span>
         </a>
         
         
@@ -702,6 +731,15 @@
            data-author="" >
             <span class="post-title" title="语雀上传文章">语雀上传文章</span>
             <span class="post-date" title="2024-07-10 19:11:30">2024/07/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/07/10/test1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="test1">test1</span>
+            <span class="post-date" title="2024-07-10 15:52:50">2024/07/10</span>
         </a>
         
         <div id="no-item-tips">

